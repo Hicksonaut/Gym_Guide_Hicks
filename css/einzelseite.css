@@ -1,0 +1,52 @@
+.svg {
+    height: 24px;
+    width: 24px;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+body {
+    background: #080B0D;
+    margin-top: 70px;
+    color: white;
+}
+
+.ex_top_seite {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(35,35,35);
+    color: white;
+    margin-right: 16px;
+    margin-left: 16px;
+    border-radius: 8px;
+}
+
+.element {
+    color: white;
+    position: relative;
+    padding: 16px;
+    margin: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 45%;
+    height: auto;
+    overflow: hidden;
+    background: rgb(35,35,35);
+
+}
+
+.ex_content_seite {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: "nunito", sans-serif;
+    justify-content: space-between;
+    width: 100%;
+    overflow: hidden;
+}
+
+#img_titel {
+    height: 25%;
+    width: auto;
+    border-radius: 8px;
+}

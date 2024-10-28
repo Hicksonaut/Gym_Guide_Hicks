@@ -1,0 +1,164 @@
+body {
+    background: #080B0D;
+    margin-top: 70px;
+    color: white;
+}
+
+.workout-container {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: "nunito", sans-serif;
+    justify-content: space-between;
+    width: 100%;
+    overflow: hidden;
+}
+
+.workout-card {
+    position: relative;
+    border: 1px solid #000;
+    padding: 16px;
+    margin: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    height: auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: rgb(35, 35, 35);
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Übergang für Transformation und Schatten */
+}
+
+.workout-card:hover {
+    box-shadow: 0px 4px 15px rgba(35, 35, 35, 0.9);
+    transform: scale(1.02);
+}
+
+.workout-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.workout-name {
+    font-size: 1.5em;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+
+.wk_container_attribut {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.workout-attribut-border {
+    width: 30%;
+    border: 1px solid #D18239;
+    padding: 16px;
+    margin: 3px;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: #D18239;
+}
+
+p {
+    font-size: 14px;
+}
+
+@media (max-width: 977px) {
+    .workout-card {
+        width: 45%; /* Für kleinere Bildschirme 2 Karten nebeneinander */
+    }
+}
+
+@media (max-width: 656px) {
+    .workout-card {
+        width: 100%; /* Auf sehr kleinen Bildschirmen 1 Karte pro Zeile */
+    }
+
+    .workout-attribut-border {
+        width: 50%; /* Attribute untereinander auf kleineren Bildschirmen */
+    }
+}
+
+#resetButton {
+    background: #D18239;
+    border: #0b0b0b;
+    border-radius: 4px;
+}
+
+.filter-container-Wk {
+    background: rgb(35, 35, 35);
+    padding: 16px;
+    color: white;
+    font-family: "nunito", sans-serif;
+    display: flex;
+    margin-left: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 998;
+    margin-right: 16px;
+}
+
+
+.filter-container-Wk select,
+.filter-container-Wk button {
+    appearance: none;
+    background-color: #D18239; /* Match attribute background */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    margin-right: 8px; /* Space between elements */
+    font-family: "nunito", sans-serif;
+}
+
+
+#resetButtonWk {
+    cursor: pointer;
+}
+
+
+.like-icon-wk {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7); /* leicht transparentes Weiß */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s;
+    opacity: 0; /* versteckt das Icon zunächst */
+    pointer-events: none; /* deaktiviert Mausinteraktionen, solange es unsichtbar ist */
+}
+
+.like-icon-wk.active img.heart-icon-wk {
+    transform: scale(1);
+}
+
+.like-icon-wk img.heart-icon-wk {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s;
+}
+
+.workout-card:hover .like-icon-wk {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.abstand-wk {
+    margin-top: 20px;
+}

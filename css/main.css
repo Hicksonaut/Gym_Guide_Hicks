@@ -1,0 +1,334 @@
+body {
+    background-color: #0b0b0b;
+}
+
+/*Leiste an der Linken Seite*/
+.navbar_left {
+    background-color: rgba(35, 35, 35);
+    height: 100%;
+    width: 70px;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 10px;
+    text-align: center;
+    color: #ffff;
+    justify-content: flex-start;
+}
+/* handy Ansicht */
+@media screen and (max-width: 600px){
+    .navbar_left {
+        width: 100%;
+        height: 0%;
+        background-color: rgba(35, 35, 35, 0.9);
+        top: 70px;
+        display: block;
+        transition: height 0.5s ease;
+        overflow: hidden;
+        padding-top: 0;
+    }
+    .navbar_left.show {
+        height: 100%;
+    }
+    .User_Profile_Navbar_Top span {
+        display: none;
+    }
+    #Logo_Icon_Top_Left {
+        display: none;
+    }
+    #Log_Out_Icon {
+        display: none;
+
+    }
+    #Home_Icon {
+        margin-top: 20px;
+    }
+    .Welcome_Message {
+        display: none;
+    }
+}
+
+/* PC Ansicht */
+@media screen and (min-width: 600px){
+    #Logo_Icon {
+        display: none;
+        padding-left: 140px;
+    }
+    .Navbar_Left_Text {
+        display: none;
+    }
+    #Home_Icon {
+        margin-top: 80px;
+    }
+    .Main_Content {
+        margin-left: 70px;
+    }
+}
+
+
+.Navbar_Left_Text{
+    font-family: "Andale Mono", serif;
+}
+
+#Logo_Icon_Top_Left {
+    width: 40px;
+}
+
+.icon {
+    width: 40px;
+    height: 40px; /* Größe anpassen */
+    padding: 5px;
+    background-color: rgb(35, 35, 35); /* Weiches Grün für den Hintergrund */
+    border-radius: 15px; /* Abgerundete Ecken */
+    box-shadow: 0px 4px 10px rgba(35, 35, 35); /* Glüheffekt */
+    transition: all 0.3s ease; /* Weicher Übergang bei Hover */
+}
+
+.icon:hover {
+    background-color: #D18239; /* Weiches Grün für den Hintergrund */
+    box-shadow: 0px 4px 15px rgba(209, 130, 57, 0.9); /* 0.6Verstärkt den Glüheffekt bei Hover */
+    transform: scale(1.05); /* Vergrößerung beim Hover */
+}
+
+#Log_Out_Icon {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+}
+
+
+
+/*Navbar on Top */
+.navbar_top {
+    background-color: rgb(35, 35, 35);
+    position: fixed;
+    height: 70px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow-x: hidden;
+    color: #ffff;
+    align-content: center;
+    justify-content: space-between;
+    display: flex;
+    z-index: 999;
+}
+
+#Logo_Icon {
+    width: 40px;
+}
+
+
+.Welcome_Message {
+    /*background-color: aqua;*/
+}
+
+.Welcome_Message h4 {
+    margin-left: 5px;
+    margin-bottom: 2px;
+    margin-top: 10px;
+    font-family: "nunito",sans-serif;
+}
+
+.Welcome_Message h3 {
+    margin-left: 6px;
+    margin-top: 2px;
+    font-family: "Barlow", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+
+
+/* ab hier ist der Teil um die User Infos zu machen*/
+.User_Profile_Navbar_Top {
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    justify-content: right;
+    /*background-color: rgb(200, 6, 6);*/
+}
+
+.avatar {
+    padding-top: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username {
+    font-size: 16px;
+    margin-right: 5px;
+    font-family: "Nunito", sans-serif;
+}
+
+.arrow {
+    font-size: 12px;
+}
+
+.user-profile:hover {
+    background-color: #fff;
+}
+
+
+.hamburger_menu {
+    padding: 15px;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #fff;
+    margin: 6px 0;
+    transition: 0.4s;
+    border-radius: 15px; /* Abgerundete Ecken */
+}
+
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+
+
+/* ab hier kommt die Navbar für das User profile*/
+.User_Profile_Navbar_Window {
+    background-color: rgb(35, 35, 35);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+    width: 200px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    margin-top: 58px;
+    border-radius: 15px;
+    height: 0%;
+    transition: height 0.5s ease;
+    z-index: 999;
+}
+
+.User_Profile_Navbar_Window.show {
+    height: 220px;
+}
+
+.User_Profile_Navbar_Window a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    font-family: Nunito, sans-serif;
+}
+
+.User_Profile_Navbar_Window a:hover {
+    color: #616161;
+}
+
+
+
+/* ab hier kommt der Inhalt der Hauptseite */
+.Main_Content {
+    margin-top: 90px;
+}
+
+.flex_1 {
+    width: auto;
+    display: flex;
+    background-color: #0b0b0b;
+    border-radius: 15px;
+}
+
+
+/*ab hier wahrscheinluch alt code der bald raus muss*/
+.Gewicht_Anzeige {
+    background-color: #333333;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.Gewicht_Anzeige:hover {
+    background-color: rgba(218, 255, 137, 0.87);
+    box-shadow: 0px 4px 15px rgba(183, 250, 135, 0.9);
+    transform: scale(1.05);
+}
+
+.Gewicht_Anzeige * {
+    margin-left: 10px;
+}
+
+.Text_in_Flex_Box {
+    font-family: "Nunito", sans-serif;
+    font-size: 15px;
+    color: #ffff;
+}
+
+#Waage_Icon {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    background-color: black;
+    border-radius: 15px;
+}
+
+.Graph_Icon {
+    margin-top: 5px;
+    width: 30%;
+    height: 60%;
+    padding: 10px;
+}
+
+
+
+.Kalorien_Anzeige {
+    background-color: #333333;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.Kalorien_Anzeige:hover{
+    background-color: rgba(218, 255, 137, 0.87);
+    box-shadow: 0px 4px 15px rgba(183, 250, 135, 0.9);
+    transform: scale(1.05);
+}
+
+.Kalorien_Anzeige * {
+    margin-left: 10px;
+}
+
+#Kalorien_Icon {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    background-color: black;
+    border-radius: 15px;
+}
+
+
+
+
+
