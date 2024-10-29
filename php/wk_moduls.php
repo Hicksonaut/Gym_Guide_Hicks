@@ -57,7 +57,7 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     echo "<div class='workout-container'>";
     while ($row = $result->fetch_assoc()) {
-        echo "<div class='workout-card' data-workout-id='" . htmlspecialchars(isset($row['workout_id']) ? $row['workout_id'] : '') . "' data-is-universal='" . htmlspecialchars(isset($row['is_universal']) ? $row['is_universal'] : '') . "' data-level='" . htmlspecialchars(isset($row['level_name']) ? $row['level_name'] : '') . "' data-liked='" . htmlspecialchars($row['liked']) . "'>";
+        echo "<div class='workout-card' data-workout-id='" . htmlspecialchars(isset($row['workout_id']) ? $row['workout_id'] : '') . "' data-is-universal='" . htmlspecialchars(isset($row['is_universal']) ? $row['is_universal'] : '') . "' data-level='" . htmlspecialchars(isset($row['level_name']) ? $row['level_name'] : '') . "' data-liked='" . htmlspecialchars($row['liked']) . "' onclick='load_einzelseite_wk(".htmlspecialchars($row['workout_id']).")'>";
         $likedClass = $row['liked'] ? 'active' : '';
 
         $heartIcon = $row["liked"] ? '/svg/heart_filled.svg' : '/svg/heart-svgrepo-com.svg';

@@ -167,6 +167,10 @@ $stmt->close();
         loadContent(`/php/einzelseiten/ex_einzelseite.php?exercise_id=${exerciseId}`);
     }
 
+    function load_einzelseite_wk(workoutId){
+        loadContent(`/php/einzelseiten/wk_einzelseite.php?workout_id=${workoutId}`);
+    }
+
 
     function loadContent(url) {
         fetch(url).then(response => response.text()).then(text => {

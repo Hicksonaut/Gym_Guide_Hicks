@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Übung Details</title>
-    <link rel="stylesheet" href="../../css/einzelseite.css"> <!-- Hier wird die CSS-Datei verlinkt -->
+    <link rel="stylesheet" href="../../css/einzelseite.css">
 </head>
 <body>
 
@@ -73,46 +73,67 @@ $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
-    echo "<div class='ex_container_seite'>";
-    echo "<div class='ex_top_seite'>";
+    echo "<div class='container_seite'>";
+    echo "<div class='top_seite'>";
     echo "<img class='svg' src='../../svg/back-svgrepo-com.svg' onclick='loadexercise()'>";
-    echo "<h2 class='ex_name_seite'>" . htmlspecialchars($row['name']) . "</h2>";
+    echo "<h2 class='name_seite'>" . htmlspecialchars($row['name']) . "</h2>";
     echo "<img id='edit_icon' class='svg' src='../../svg/edit-svgrepo-com-3.svg'>";
     echo "</div>";
-    echo "<div class='ex_content_seite'>";
-    //bild + description
-    //tabelle + maybe muskel bild
+    echo "<div class='content_seite'>";
 
-    echo "<img id='img_titel' class='element' src='/img/Exercise_bilder/" . htmlspecialchars($row['bild_ex']) . "'>";
-    echo "<p class='element'>" . htmlspecialchars($row['description']) . "</p>";
-    echo "<table class='element'>";
-    echo "<tr>";
+    echo "<img id='img_titel' class='element-bild' src='/img/Exercise_bilder/" . htmlspecialchars($row['bild_ex']) . "'>";
+    if (!empty($row['description'])) {
+        echo "<p class='element-text'>" . htmlspecialchars($row['description']) . "</p>";
+    } else {
+        echo "<p class='element-text'>nothing</p>";
+    }
+
+    echo "<table class='element-table'>";
+    echo "<tr class='ueberschrift_tabelle'>";
     echo "<td>Zielmuskel</td>";
-    echo "<td>".htmlspecialchars($row['muscle_name'])."</td>";
-    echo "</tr>";
-    echo "<tr>";
     echo "<td>Ziel der Übung</td>";
-    echo "<td>".htmlspecialchars($row['ziel_name'])."</td>";
-    echo "</tr>";
-    echo "<tr>";
     echo "<td>Benötigtes Equipment</td>";
-    echo "<td>".htmlspecialchars($row['equipment_name'])."</td>";
-    echo "</tr>";
-    echo "<tr>";
-    echo "<td>Mechanics</td>";
-    echo "<td>".htmlspecialchars($row['mechanics_name'])."</td>";
-    echo "</tr>";
-    echo "<tr>";
+    echo "<td >Mechanics</td>";
     echo "<td>Force Type</td>";
-    echo "<td>".htmlspecialchars($row['force_name'])."</td>";
+    echo "<td>Experience Level</td>";
     echo "</tr>";
     echo "<tr>";
-    echo "<td>Experience Level</td>";
-    echo "<td>".htmlspecialchars($row['level_name'])."</td>";
+    echo "<td>" . htmlspecialchars($row['muscle_name']) . "</td>";
+    echo "<td>" . htmlspecialchars($row['ziel_name']) . "</td>";
+    echo "<td>" . htmlspecialchars($row['equipment_name']) . "</td>";
+    echo "<td>" . htmlspecialchars($row['mechanics_name']) . "</td>";
+    echo "<td>" . htmlspecialchars($row['force_name']) . "</td>";
+    echo "<td>" . htmlspecialchars($row['level_name']) . "</td>";
     echo "</tr>";
     echo "</table>";
 
 
+    echo "<table class='element-table-mobile'>";
+    echo "<tr>";
+    echo "<td class='ueberschrift_tabelle'>Zielmuskel</td>";
+    echo "<td>".htmlspecialchars($row['muscle_name'])."</td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "<td class='ueberschrift_tabelle'>Ziel der Übung</td>";
+    echo "<td>".htmlspecialchars($row['ziel_name'])."</td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "<td class='ueberschrift_tabelle'>Benötigtes Equipment</td>";
+    echo "<td>".htmlspecialchars($row['equipment_name'])."</td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "<td class='ueberschrift_tabelle'>Mechanics</td>";
+    echo "<td>".htmlspecialchars($row['mechanics_name'])."</td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "<td class='ueberschrift_tabelle'>Force Type</td>";
+    echo "<td>".htmlspecialchars($row['force_name'])."</td>";
+    echo "</tr>";
+    echo "<tr>";
+    echo "<td class='ueberschrift_tabelle'>Experience Level</td>";
+    echo "<td>".htmlspecialchars($row['level_name'])."</td>";
+    echo "</tr>";
+    echo "</table>";
 
     echo "</div>";
 }

@@ -124,9 +124,9 @@ $update_stmt = $conn->prepare($update_sql);
 $update_stmt->bind_param("iiiii", $selected_trainingsziel, $selected_body_part, $average_level, $selected_equipment, $workout_id);
 
 if ($update_stmt->execute()) {
-    echo "Workout aktualisiert.";
+    //echo "Workout aktualisiert.";
 } else {
-    echo "Fehler beim Aktualisieren des Workouts: " . $conn->error;
+   // echo "Fehler beim Aktualisieren des Workouts: " . $conn->error;
 }
 
 $update_stmt->close();

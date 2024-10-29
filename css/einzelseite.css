@@ -11,7 +11,7 @@ body {
     color: white;
 }
 
-.ex_top_seite {
+.top_seite {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -20,8 +20,12 @@ body {
     margin-right: 16px;
     margin-left: 16px;
     border-radius: 8px;
+    font-family: "nunito", sans-serif;
 }
 
+.element-bild,
+.element-text,
+.element-table,
 .element {
     color: white;
     position: relative;
@@ -29,14 +33,24 @@ body {
     margin: 16px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    width: 45%;
     height: auto;
     overflow: hidden;
     background: rgb(35,35,35);
-
 }
 
-.ex_content_seite {
+.element-bild {
+    width: 45%;
+}
+
+.element-text {
+    width: 60%;
+}
+
+.element-table {
+    width: 100%;
+}
+
+.content_seite {
     display: flex;
     flex-wrap: wrap;
     font-family: "nunito", sans-serif;
@@ -46,7 +60,43 @@ body {
 }
 
 #img_titel {
-    height: 25%;
-    width: auto;
+    height: 100%;
+    width: 400px;
+    object-fit: cover;
     border-radius: 8px;
+}
+
+.element-table-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .element-table-mobile {
+        color: white;
+        position: relative;
+        padding: 16px;
+        margin: 16px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        background: rgb(35,35,35);
+        display: block;
+    }
+    .element-bild {
+        width: 100%;
+    }
+
+    .element-text {
+        width: 100%;
+    }
+
+    .element-table {
+        display: none;
+    }
+}
+
+.ueberschrift_tabelle{
+    color: #ef801b;
 }

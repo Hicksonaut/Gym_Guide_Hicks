@@ -49,6 +49,8 @@ function resetFiltersWk() {
 }
 
 function toggleLikeWk(element, workout_id) {
+    event.stopPropagation();
+
     element.classList.toggle('active');
     const liked = element.classList.contains('active') ? 1 : 0;
     const bodyData = `workout_id=${encodeURIComponent(workout_id)}&liked=${encodeURIComponent(liked)}`;
