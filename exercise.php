@@ -79,5 +79,10 @@ include 'php/ex_filter.php';
 include 'php/ex_moduls.php';
 ?>
 
+<?php
+include 'php/Impressum/impressum_link_zeile.php';
+?>
+
+<button id="scrollToTopBtn" title="Nach oben scrollen">⬆️</button>
 </body>
 </html>

@@ -100,3 +100,7 @@ body {
 .ueberschrift_tabelle{
     color: #ef801b;
 }
+
+p {
+    margin-left: 1em;
+}

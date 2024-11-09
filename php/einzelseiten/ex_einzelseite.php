@@ -35,7 +35,8 @@ if (isset($_SESSION['user_id'])) {
 $sql = "
     SELECT
         ex.name,
-        ex.description,
+        ex.instructions,
+        ex.Tips,
         ex.bild_ex,
         ex.bild_muscle,
         m.muscle_name AS muscle_name,
@@ -82,11 +83,22 @@ if ($result->num_rows > 0) {
     echo "<div class='content_seite'>";
 
     echo "<img id='img_titel' class='element-bild' src='/img/Exercise_bilder/" . htmlspecialchars($row['bild_ex']) . "'>";
-    if (!empty($row['description'])) {
-        echo "<p class='element-text'>" . htmlspecialchars($row['description']) . "</p>";
+
+    echo "<div class='element-text'>";
+    echo "<h3>".htmlspecialchars($row['name'])." Instructions</h3>";
+    if (!empty($row['instructions'])) {
+        echo "<p>" . htmlspecialchars($row['instructions']) . "</p>";
     } else {
-        echo "<p class='element-text'>nothing</p>";
+        echo "<p>nothing</p>";
     }
+    echo "<h3>".htmlspecialchars($row['name'])." Tips</h3>";
+    if (!empty($row['Tips'])) {
+        echo "<p>" . htmlspecialchars($row['Tips']) . "</p>";
+    } else {
+        echo "<p>nothing</p>";
+    }
+
+    echo "</div>";
 
     echo "<table class='element-table'>";
     echo "<tr class='ueberschrift_tabelle'>";
@@ -138,3 +150,5 @@ if ($result->num_rows > 0) {
     echo "</div>";
 }
 ?>
+
+<?php include '../Impressum/impressum_link_zeile.php'; ?>

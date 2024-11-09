@@ -69,11 +69,14 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
 
+
+
     echo "<div class='container_seite'>";
     echo "<div class='top_seite'>";
     echo "<img class='svg' src='../../svg/back-svgrepo-com.svg' onclick='loadworkout()'>";
     echo "<h2 class='name_seite'>" . htmlspecialchars($row['workout_name']) . "</h2>";
     echo "<img id='edit_icon' class='svg' src='../../svg/edit-svgrepo-com-3.svg'>";
+
     echo "</div>";
     echo "<div class='content_seite'>";
 
@@ -122,3 +125,6 @@ if ($result->num_rows > 0) {
     echo "</div>";
 }
 ?>
+
+<?php include '../Impressum/impressum_link_zeile.php'; ?>
+

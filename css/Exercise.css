@@ -213,3 +213,29 @@ p {
 ::placeholder {
     color: white;
 }
+
+h2 {
+    font-family: "nunito", sans-serif;
+    margin-left: 19px;
+}
+
+#scrollToTopBtn {
+    display: none; /* Standardmäßig versteckt */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999; /* Über allen anderen Elementen */
+    background-color: #D18239; /* Gleiche Farbe wie andere Buttons */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease-in-out;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #b36a2d; /* Leicht dunklerer Farbton beim Hover */
+}

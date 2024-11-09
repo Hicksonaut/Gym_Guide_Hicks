@@ -78,3 +78,23 @@ function toggleLike(element, exercise_id) {
 }
 
 
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Zeige den Button nur, wenn der Benutzer nach unten scrollt
+    window.onscroll = function() {
+        var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            scrollToTopBtn.style.display = "block"; // Zeige den Button an
+        } else {
+            scrollToTopBtn.style.display = "none"; // Verstecke den Button
+        }
+    };
+
+    // Funktion zum Scrollen nach oben
+    var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    if (scrollToTopBtn) {
+        scrollToTopBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' }); };
+    }
+});

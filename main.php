@@ -171,13 +171,44 @@ $stmt->close();
         loadContent(`/php/einzelseiten/wk_einzelseite.php?workout_id=${workoutId}`);
     }
 
+    function load_Impressum() {
+        loadContent('/php/Impressum/Impressum.php');
+    }
+
+    function load_Datenschutz() {
+        loadContent('/php/Impressum/Datenschutzrichtlinien.php')
+    }
 
     function loadContent(url) {
-        fetch(url).then(response => response.text()).then(text => {
-            document.getElementById('mainContent').innerHTML = text;
+        fetch(url)
+            .then(response => response.text())
+            .then(text => {
+                document.getElementById('mainContent').innerHTML = text;
+
+                attachScrollToTopListener();
         }).catch(error => {
             console.error('Error loading content: ' + error); // Fehlerstatus anzeigen
         })
+    }
+
+    function attachScrollToTopListener() {
+        var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        if (scrollToTopBtn) {
+            // Show or hide the button based on scroll position
+            window.onscroll = function() {
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    scrollToTopBtn.style.display = "block";
+                } else {
+                    scrollToTopBtn.style.display = "none";
+                }
+            };
+
+            // Scroll smoothly to top when button is clicked
+            scrollToTopBtn.onclick = function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+        }
     }
 
     document.addEventListener('DOMContentLoaded', function () {
@@ -204,6 +235,10 @@ $stmt->close();
             }
         });
     });
+
+    document.addEventListener("DOMContentLoaded", attachScrollToTopListener);
+
+
 
 </script>
 <script src="js/exersice.js"></script>

@@ -86,5 +86,9 @@ include 'php/wk_filter.php';
 include 'php/wk_moduls.php';
 ?>
 
+<?php
+include 'php/Impressum/impressum_link_zeile.php';
+?>
+
 </body>
 </html>
