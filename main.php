@@ -26,6 +26,8 @@ $stmt->close();
     <title>Gym Tracker</title>
     <link rel="icon" href="img/Logo.png">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/workout.css">
+    <link rel="stylesheet" href="css/Exercise.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
@@ -163,7 +165,7 @@ $stmt->close();
         loadContent('/php/user_wk_erstellen/wk_erstellen_menu.php');
     }
 
-    function load_einzelseite_ex(exerciseId){
+    function load_einzelseite_ex(exerciseId) {
         loadContent(`/php/einzelseiten/ex_einzelseite.php?exercise_id=${exerciseId}`);
     }
 
@@ -176,7 +178,11 @@ $stmt->close();
     }
 
     function load_Datenschutz() {
-        loadContent('/php/Impressum/Datenschutzrichtlinien.php')
+        loadContent('/php/Impressum/Datenschutzrichtlinien.php');
+    }
+
+    function load_wk_bearbeiten_user(workoutId) {
+        loadContent(`/php/einzelseiten/wk_bearbeiten_user.php?workout_id=${workoutId}`);
     }
 
     function loadContent(url) {
@@ -212,13 +218,10 @@ $stmt->close();
     }
 
     document.addEventListener('DOMContentLoaded', function () {
-        // Stelle sicher, dass dieses Skript erst läuft, wenn das Formular dynamisch geladen wurde.
         document.getElementById('mainContent').addEventListener('submit', function (e) {
+            e.preventDefault();
             if (e.target && e.target.id === 'createWorkoutForm') {
-                e.preventDefault(); // Standard-Formular-Übertragung verhindern
-
-                let formData = new FormData(e.target); // Daten aus dem Formular holen
-
+                let formData = new FormData(e.target);
                 fetch('php/user_wk_erstellen/user_wk_erstellen.php', {
                     method: 'POST',
                     body: formData,
@@ -231,6 +234,22 @@ $stmt->close();
                     .catch(error => {
                         console.error('Fehler beim Erstellen des Workouts:', error);
                         alert("Fehler beim Erstellen des Workouts.");
+                    });
+            }  else if (e.target && e.target.id === 'UpdateWorkoutForm') {
+                let formData = new FormData(e.target);
+                fetch(`php/einzelseiten/wk_bearbeiten_user.php`, {
+                    method: 'POST',
+                    body: formData,
+                })
+                    .then(response => response.text())
+                    .then(data => {
+                        console.log(data);
+                        alert("Workout erfolgreich aktualisiert!");
+                        load_wk_erstellen_menu();
+                    })
+                    .catch(error => {
+                        console.error('Fehler beim Aktualisieren des Workouts:', error);
+                        alert("Fehler beim Aktualisieren des Workouts.");
                     });
             }
         });

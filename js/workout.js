@@ -1,3 +1,5 @@
+console.log('workout.js Loaded');
+
 function applyFiltersWk() {
     var trainingsziel = document.getElementById('trainingsziel').value.toUpperCase();
     var body_part = document.getElementById('body_part').value.toUpperCase();
@@ -51,19 +53,20 @@ function resetFiltersWk() {
 function toggleLikeWk(element, workout_id) {
     event.stopPropagation();
 
+    alert('test');
+
     element.classList.toggle('active');
     const liked = element.classList.contains('active') ? 1 : 0;
     const bodyData = `workout_id=${encodeURIComponent(workout_id)}&liked=${encodeURIComponent(liked)}`;
 
-
     const icon = element.querySelector('img.heart-icon-wk')
     if (liked) {
-        icon.src = "/svg/heart_filled.svg"
+        icon.src = "../svg/heart_filled.svg"
     } else {
-        icon.src = "/svg/heart-svgrepo-com.svg"
+        icon.src = "../svg/heart-svgrepo-com.svg"
     }
 
-    fetch('php/likeWk.php', {
+    fetch('../php/likeWk.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',

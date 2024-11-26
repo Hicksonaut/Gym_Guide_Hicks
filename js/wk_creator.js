@@ -106,3 +106,4 @@ function WK_abbrechen() {
     xhr.send();
     loadworkout()
 }
+

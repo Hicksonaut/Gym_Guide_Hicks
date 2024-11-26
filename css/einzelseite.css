@@ -104,3 +104,35 @@ body {
 p {
     margin-left: 1em;
 }
+
+.like-icon-einzelseite img.heart-icon-einzelseite {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s;
+}
+
+.like-icon-einzelseite.active img.heart-icon-einzelseite {
+    transform: scale(1);
+}
+
+.like-icon-einzelseite {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7); /* leicht transparentes Weiß */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    transition: background 0.3s;
+    pointer-events: none; /* deaktiviert Mausinteraktionen, solange es unsichtbar ist */
+    margin-left: 1rem;
+}
+
+.name_herz {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

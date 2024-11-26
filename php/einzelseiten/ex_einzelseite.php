@@ -34,6 +34,7 @@ if (isset($_SESSION['user_id'])) {
 
 $sql = "
     SELECT
+        ex.ex_id AS exercise_id,
         ex.name,
         ex.instructions,
         ex.Tips,
@@ -44,7 +45,8 @@ $sql = "
         eq.equipment_name AS equipment_name,
         Me.mechanics_name AS mechanics_name,
         fo.force_name AS force_name,
-        le.level_name AS level_name
+        le.level_name AS level_name,
+        COALESCE(uf.liked,0) as liked
     FROM
         exercises ex
     LEFT JOIN
@@ -77,8 +79,21 @@ if ($result->num_rows > 0) {
     echo "<div class='container_seite'>";
     echo "<div class='top_seite'>";
     echo "<img class='svg' src='../../svg/back-svgrepo-com.svg' onclick='loadexercise()'>";
+
+    echo "<div class='name_herz' data-exercise-id='{$exercise_id}'>";
     echo "<h2 class='name_seite'>" . htmlspecialchars($row['name']) . "</h2>";
-    echo "<img id='edit_icon' class='svg' src='../../svg/edit-svgrepo-com-3.svg'>";
+
+
+    $likedClass = $row['liked'] ? 'active' : '';
+    $heartIcon = $row['liked'] ? '../../svg/heart_filled.svg' : '../../svg/heart-svgrepo-com.svg';
+    echo "<div class='like-icon-einzelseite' $likedClass onclick='toggleLike(this, ".htmlspecialchars($row['exercise_id']).")'>";
+    echo "<img src='". $heartIcon. "' alt='Like Icon' class='heart-icon-einzelseite'>";
+    echo "</div>";
+
+    echo "</div>";
+
+
+    echo "<img id='edit_icon' class='svg' src='../../svg/gray.svg' style='z-index: -9'>";
     echo "</div>";
     echo "<div class='content_seite'>";
 
@@ -105,7 +120,7 @@ if ($result->num_rows > 0) {
     echo "<td>Zielmuskel</td>";
     echo "<td>Ziel der Übung</td>";
     echo "<td>Benötigtes Equipment</td>";
-    echo "<td >Mechanics</td>";
+    echo "<td>Mechanics</td>";
     echo "<td>Force Type</td>";
     echo "<td>Experience Level</td>";
     echo "</tr>";
@@ -147,7 +162,7 @@ if ($result->num_rows > 0) {
     echo "</tr>";
     echo "</table>";
 
-    echo "</div>";
+    echo "</div>"; #schliest die oberste DIV container_seite
 }
 ?>
 

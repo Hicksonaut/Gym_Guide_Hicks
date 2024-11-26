@@ -13,6 +13,7 @@
             align-items: center;
             color: white;
             margin: 0;
+            width: 100%;
         }
 
         .Buttons {
