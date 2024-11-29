@@ -4,7 +4,7 @@ body {
     color: white;
 }
 
-.workout-container {
+.plan-container {
     display: flex;
     flex-wrap: wrap;
     font-family: "nunito", sans-serif;
@@ -13,7 +13,7 @@ body {
     overflow: hidden;
 }
 
-.workout-card {
+.plan-card {
     position: relative;
     border: 1px solid #000;
     padding: 16px;
@@ -29,32 +29,32 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Übergang für Transformation und Schatten */
 }
 
-.workout-card:hover {
+.plan-card:hover {
     box-shadow: 0px 4px 15px rgba(35, 35, 35, 0.9);
     transform: scale(1.02);
 }
 
-.workout-image {
+.plan-image {
     width: 100%;
     height: 250px;
     object-fit: cover;
     border-radius: 8px;
 }
 
-.workout-name {
+.plan-name {
     font-size: 1.5em;
     margin-top: 8px;
     margin-left: 8px;
 }
 
-.wk_container_attribut {
+.pl_container_attribut {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.workout-attribut-border {
-    width: 30%;
+.plan-attribut-border {
+    width: 22%;
     border: 1px solid #D18239;
     padding: 16px;
     margin: 3px;
@@ -73,25 +73,18 @@ p {
 }
 
 @media (max-width: 977px) {
-    .workout-card {
+    .plan-card {
         width: 45%; /* Für kleinere Bildschirme 2 Karten nebeneinander */
-    }
-    .plus-icon {
-        opacity: 1;
     }
 }
 
 @media (max-width: 656px) {
-    .workout-card {
+    .plan-card {
         width: 100%; /* Auf sehr kleinen Bildschirmen 1 Karte pro Zeile */
     }
 
-    .workout-attribut-border {
+    .plan-attribut-border {
         width: 50%; /* Attribute untereinander auf kleineren Bildschirmen */
-    }
-
-    .plus-icon {
-        opacity: 1;
     }
 }
 
@@ -101,7 +94,7 @@ p {
     border-radius: 4px;
 }
 
-.filter-container-Wk {
+.filter-container-pl {
     background: rgb(35, 35, 35);
     padding: 16px;
     color: white;
@@ -115,8 +108,8 @@ p {
 }
 
 
-.filter-container-Wk select,
-.filter-container-Wk button {
+.filter-container-pl select,
+.filter-container-pl button {
     appearance: none;
     background-color: #D18239; /* Match attribute background */
     color: white;
@@ -128,16 +121,12 @@ p {
 }
 
 
-#resetButtonWk {
+#resetButtonpl {
     cursor: pointer;
 }
 
-.plus-icon {
-    background: rgba(191, 191, 191, 0.7) !important;
-    color: gray;
-}
-.plus-icon,
-.like-icon-wk {
+
+.like-icon-pl {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -154,22 +143,22 @@ p {
     pointer-events: none; /* deaktiviert Mausinteraktionen, solange es unsichtbar ist */
 }
 
-.like-icon-wk.active img.heart-icon-wk {
+.like-icon-pl.active img.heart-icon-pl {
     transform: scale(1);
 }
 
-.like-icon-wk img.heart-icon-wk {
+.like-icon-pl img.heart-icon-pl {
     width: 24px;
     height: 24px;
     transition: transform 0.3s;
 }
-.workout-card:hover .plus-icon,
-.workout-card:hover .like-icon-wk {
+
+.plan-card:hover .like-icon-pl {
     opacity: 1;
     pointer-events: auto;
 }
 
 
-.abstand-wk {
+.abstand-pl {
     margin-top: 20px;
 }

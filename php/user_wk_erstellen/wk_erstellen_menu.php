@@ -84,6 +84,7 @@ if ($row = $result->fetch_assoc()) {
     include 'ex_moduls_wk_erstellen.php';
     ?>
 
+<button id="scrollToTopBtn" title="Nach oben scrollen">⬆️</button>
 </div>
 </body>
 </html>
