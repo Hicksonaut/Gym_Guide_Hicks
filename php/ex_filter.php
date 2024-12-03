@@ -28,15 +28,15 @@ $filter_sql_ex = "SELECT DISTINCT
     FROM 
         exercises ex
     LEFT JOIN
-        UserFavorites uf ON ex.ex_id = uf.exercise_id AND uf.user_id = ?
+        userfavorites uf ON ex.ex_id = uf.exercise_id AND uf.user_id = ?
     LEFT JOIN
-        Muscle M ON ex.target_muscle = M.muscle_id
+        muscle M ON ex.target_muscle = M.muscle_id
     LEFT JOIN
         equipment e ON ex.equipment_requierd = e.equipment_id
     LEFT JOIN 
         mechanics me ON ex.mechanics = me.mechanics_id
     LEFT JOIN
-        Levels L ON ex.experience_level = L.level_id
+        levels l ON ex.experience_level = l.level_id
 ";
 $filter_result_ex = $conn->prepare($filter_sql_ex);
 if (!$filter_result_ex) {

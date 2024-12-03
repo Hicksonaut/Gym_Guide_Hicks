@@ -1,18 +1,20 @@
 body {
     background: #080B0D;
     margin-top: 70px;
+    color: white;
 }
 
-.exercise-container {
+.module-container {
     display: flex;
     flex-wrap: wrap;
     font-family: "nunito", sans-serif;
     justify-content: space-between;
     width: 100%;
     overflow: hidden;
+    position: relative;
 }
 
-.exercise-card {
+.module-card {
     position: relative;
     border: 1px solid #000;
     padding: 16px;
@@ -30,20 +32,19 @@ body {
     transform-style: preserve-3d;
 }
 
-.exercise-card:hover {
+.module-card:hover {
     box-shadow: 0px 4px 15px rgba(35, 35, 35, 0.9);
     transform: scale(1.02);
 }
 
-
-.exercise-image {
+.module-image {
     width: 100%;
     height: 250px;
     object-fit: cover;
     border-radius: 8px;
 }
 
-.exercise-name {
+.module-name {
     font-size: 1.5em;
     margin-top: 8px;
     margin-left: 8px;
@@ -55,7 +56,7 @@ body {
     justify-content: space-between;
 }
 
-.exercise-attribut-border {
+.module-attribut-border-four {
     width: 22%;
     border: 1px solid #D18239;
     padding: 16px;
@@ -70,17 +71,34 @@ body {
     background: #D18239;
 }
 
+.module-attribut-border-three {
+    width: 30%;
+    border: 1px solid #D18239;
+    padding: 16px;
+    margin: 3px;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: #D18239;
+}
+
+
+
 p {
     font-size: 14px;
 }
 
-@media (max-width: 977px) {
-    .exercise-card {
+@media (max-width: 1029px) {
+    .module-card {
         width: 45%; /* Für kleinere Bildschirme 2 Karten nebeneinander */
     }
 
-    .exercise-attribut-border {
-        width: 30%;
+    .module-attribut-border-four {
+        width: 47%;
     }
 
     .plus-icon {
@@ -92,12 +110,12 @@ p {
     }
 }
 
-@media (max-width: 656px) {
-    .exercise-card {
+@media (max-width: 709px) {
+    .module-card {
         width: 100%; /* Auf sehr kleinen Bildschirmen 1 Karte pro Zeile */
     }
 
-    .exercise-attribut-border {
+    .module-attribut-border-four {
         width: 45%; /* Attribute untereinander auf kleineren Bildschirmen */
     }
 
@@ -149,11 +167,30 @@ p {
 }
 
 .plus-icon {
-    background: rgba(191, 191, 191, 0.7) !important;
-    color: gray;
+    background: rgba(81, 81, 81, 0.85) !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 50px;
+    transition: background 0.3s;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2;
 }
 
-.plus-icon,
+.plus-icon-img {
+    height: 15%;
+    width: auto;
+}
+
+
 .like-icon {
     position: absolute;
     top: 10px;
@@ -172,8 +209,8 @@ p {
     pointer-events: none; /* deaktiviert Mausinteraktionen, solange es unsichtbar ist */
 }
 
-.exercise-card:hover .plus-icon,
-.exercise-card:hover .like-icon {
+.module-card:hover .plus-icon,
+.module-card:hover .like-icon {
     opacity: 1; /* zeigt das Icon beim Hover an */
     pointer-events: auto; /* aktiviert Mausinteraktionen */
 }
@@ -194,14 +231,12 @@ p {
 }
 
 
-#exercise_search {
+.module_search {
     appearance: none;
     padding-top: 5px;
     padding-bottom: 6px;
     padding-left: 5px;
     font-size: 12px;
-    /*border: 1px solid #D18239;
-    border-radius: 4px;*/
     border: none;
     border-radius: 4px;
     background: #D18239;

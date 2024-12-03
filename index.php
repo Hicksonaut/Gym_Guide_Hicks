@@ -26,9 +26,7 @@ $stmt->close();
     <title>Gym Tracker</title>
     <link rel="icon" href="img/Logo.png">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/workout.css">
-    <link rel="stylesheet" href="css/Exercise.css">
-    <link rel="stylesheet" href="css/plan.css">
+    <link rel="stylesheet" href="css/Module.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
@@ -43,9 +41,10 @@ $stmt->close();
     <br>
     <img src="svg/graph.svg" alt="Stats" class="icon">
     <h3 class="Navbar_Left_Text">Stats</h3>
-    <br>
+    <!--<br>
     <img src="svg/calender.svg" alt="Ball" class="icon">
     <h3 class="Navbar_Left_Text">Kalender</h3>
+    <br>-->
     <br>
     <a href="#" id="exerciseLink" onclick="loadexercise()">
         <img src="svg/exersice.svg" alt="Exercise" class="icon">

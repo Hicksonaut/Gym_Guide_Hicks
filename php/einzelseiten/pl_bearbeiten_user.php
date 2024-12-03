@@ -29,7 +29,7 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 
 
-$sql = "SELECT name, Bild, description FROM WorkoutPlan WHERE plan_id = ?";
+$sql = "SELECT name, Bild, description FROM workoutplan WHERE plan_id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $plan_id);
 $stmt->execute();
@@ -66,12 +66,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // SQL-Abfrage vorbereiten: Unterscheidung ob Bild aktualisiert wird oder nicht
     if ($bild_hochgeladen) {
         // Wenn ein neues Bild hochgeladen wurde, auch das Bild aktualisieren
-        $sql_update = "UPDATE WorkoutPlan SET name = ?, description = ?, Bild = ? WHERE plan_id = ?";
+        $sql_update = "UPDATE workoutplan SET name = ?, description = ?, Bild = ? WHERE plan_id = ?";
         $stmt_update = $conn->prepare($sql_update);
         $stmt_update->bind_param("sssi", $name, $description, $uniquefilename, $plan_id);
     } else {
         // Wenn kein neues Bild hochgeladen wurde, nur Name und Beschreibung aktualisieren
-        $sql_update = "UPDATE WorkoutPlan SET name = ?, description = ? WHERE plan_id = ?";
+        $sql_update = "UPDATE workoutplan SET name = ?, description = ? WHERE plan_id = ?";
         $stmt_update = $conn->prepare($sql_update);
         $stmt_update->bind_param("ssi", $name, $description, $plan_id);
     }
@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Plan Bearbeiten</title>
-    <link rel="stylesheet" href="../../css/einzelseite.css">
+    <link rel="stylesheet" href="../../css/bearbeiten_user.css">
 </head>
 <body>
 <div class="container_main">
@@ -111,7 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="form_group">
                 <label for="pl_bild">Bild aktualisieren:</label>
                 <!-- Aktuelles Bild anzeigen -->
-                <img src="../../img/Plan_bilder/<?php echo !empty($row['bild']) ? htmlspecialchars($row['Bild']) : 'random.png'; ?>" alt="Plan Bild" style="max-width: 200px;">
+               <!-- <img src="../../img/Plan_bilder/<?php echo !empty($row['Bild']) ? htmlspecialchars($row['Bild']) : 'random.png'; ?>" alt="Plan Bild" style="max-width: 200px;"> -->
                 <!-- Datei-Upload für neues Bild -->
                 <input type="file" id="pl_bild" name="pl_bild">
             </div>

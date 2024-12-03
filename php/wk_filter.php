@@ -26,15 +26,15 @@ $filter_sql = "SELECT DISTINCT
     FROM 
         workouts wk
     LEFT JOIN
-        UserFavorites uf ON wk.workout_id = uf.workout_id AND uf.user_id = ?
+        userfavorites uf ON wk.workout_id = uf.workout_id AND uf.user_id = ?
     LEFT JOIN
-        Muscle M ON wk.body_part = M.muscle_id
+        muscle M ON wk.body_part = M.muscle_id
     LEFT JOIN
-        Levels L ON wk.level = L.level_id
+        levels L ON wk.level = L.level_id
     LEFT JOIN
-        trainingsziel T ON wk.trainingsziel = t.ziel_id
+        trainingsziel T ON wk.trainingsziel = T.ziel_id
     LEFT JOIN
-        equipment E ON wk.equipment = e.equipment_id
+        equipment E ON wk.equipment = E.equipment_id
 ";
 $filter_result = $conn->prepare($filter_sql);
 if (!$filter_result) {

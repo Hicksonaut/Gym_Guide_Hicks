@@ -25,17 +25,17 @@ $filter_sql = "SELECT DISTINCT
         Pl.trainingstage,
         COALESCE(uf.liked,0) as liked
     FROM 
-        WorkoutPlan Pl
+        workoutplan Pl
     LEFT JOIN
-        UserFavorites uf ON Pl.plan_id = uf.plan_id_fk AND uf.user_id = ?
+        userfavorites uf ON Pl.plan_id = uf.plan_id_fk AND uf.user_id = ?
     LEFT JOIN
-        trainingsziel T ON Pl.ziel = t.ziel_id
+        trainingsziel T ON Pl.ziel = T.ziel_id
     LEFT JOIN 
-        Muscle M ON Pl.body_part = m.muscle_id
+        muscle M ON Pl.body_part = M.muscle_id
     LEFT JOIN
-        Levels L On Pl.Level = L.level_id
+        levels L On Pl.Level = L.level_id
     LEFT JOIN 
-        equipment E ON Pl.equipment = e.equipment_id
+        equipment E ON Pl.equipment = E.equipment_id
 ";
 $filter_result = $conn->prepare($filter_sql);
 if (!$filter_result) {

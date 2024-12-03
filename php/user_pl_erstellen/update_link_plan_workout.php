@@ -14,14 +14,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $workout_id = $_POST["workout_id"];
 
     // Überprüfen, ob die Übung bereits dem Workout zugeordnet ist
-    $stmt = $conn->prepare("SELECT * FROM Link_Plan_Workout WHERE plan_id = ? AND Workout_id = ?");
+    $stmt = $conn->prepare("SELECT * FROM link_plan_workout WHERE plan_id = ? AND Workout_id = ?");
     $stmt->bind_param("ii", $plan_id, $workout_id);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
         // Übung ist bereits zugeordnet, also entfernen wir sie
-        $stmt = $conn->prepare("DELETE FROM Link_Plan_Workout WHERE plan_id = ? AND Workout_id = ?");
+        $stmt = $conn->prepare("DELETE FROM link_plan_workout WHERE plan_id = ? AND Workout_id = ?");
         $stmt->bind_param("ii", $plan_id, $workout_id);
         if ($stmt->execute()) {
             echo "removed";
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         // Übung ist nicht zugeordnet, also fügen wir sie hinzu
-        $stmt = $conn->prepare("INSERT INTO Link_Plan_Workout (plan_id, workout_id) VALUES (?, ?)");
+        $stmt = $conn->prepare("INSERT INTO link_plan_workout (plan_id, workout_id) VALUES (?, ?)");
         if (!$stmt) {
             die("SQL Error: " . $conn->error);
         }

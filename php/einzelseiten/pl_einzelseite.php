@@ -46,17 +46,17 @@ $sql = "
         eq.equipment_name as equipment_name,
         pl.creator_user_id
     FROM
-        workoutPlan pl
+        workoutplan pl
     LEFT JOIN
-        UserFavorites uf ON uf.plan_id_fk = pl.plan_id AND uf.user_id = ?
+        userfavorites uf ON uf.plan_id_fk = pl.plan_id AND uf.user_id = ?
     LEFT JOIN
-        Users us ON pl.creator_user_id = us.id
+        users us ON pl.creator_user_id = us.id
     LEFT JOIN
         trainingsziel zi ON pl.ziel = zi.ziel_id
     LEFT JOIN
-        Muscle Mu ON pl.body_part = Mu.muscle_id
+        muscle Mu ON pl.body_part = Mu.muscle_id
     LEFT JOIN
-        Levels le ON pl.Level = le.level_id
+        levels le ON pl.Level = le.level_id
     LEFT JOIN
         equipment eq ON pl.equipment = eq.equipment_id
     WHERE
@@ -99,7 +99,7 @@ if ($result->num_rows > 0) {
     echo "</div>";#ende top seite
     echo "<div class='content_seite'>";
 
-    echo "<img id='img_titel' class='element-bild' src='/img/plan_bilder/" . htmlspecialchars($row['Bild']) . "'>";
+    echo "<img id='img_titel' class='element-bild' src='/img/Plan_bilder/" . htmlspecialchars($row['Bild']) . "'>";
     if (!empty($row['description'])) {
         echo "<p class='element-text'>" . htmlspecialchars($row['description']) . "</p>";
     } else {
@@ -153,17 +153,17 @@ if ($result->num_rows > 0) {
             Wk.workout_name AS workout_name, 
             mu.muscle_name AS muscle_name,
             eq.equipment_name AS equipment_name,
-            le.level_name AS level_name
+            Le.level_name AS level_name
         FROM 
-            Link_Plan_Workout lPW
+            link_plan_workout lPW
         JOIN 
-            Workouts Wk ON lPW.Workout_id = Wk.workout_id
+            workouts Wk ON lPW.Workout_id = Wk.workout_id
         LEFT JOIN 
-            Muscle mu ON Wk.body_part = mu.muscle_id
+            muscle mu ON Wk.body_part = mu.muscle_id
         LEFT JOIN
             equipment eq ON Wk.equipment = eq.equipment_id
         LEFT JOIN
-            Levels Le ON Wk.Level = Le.level_id
+            levels Le ON Wk.Level = Le.level_id
         WHERE 
             lPW.plan_id = ?
     ";

@@ -1,6 +1,6 @@
 <?php
 $servername = "localhost";
-$username = "root";
+$username = "gym_tracker";
 $password = "1234";
 $dbname = "gym_tracker";
 

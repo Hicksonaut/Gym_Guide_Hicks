@@ -10,10 +10,10 @@ include 'php/wk_filter.php';
     <meta charset="UTF-8">
     <title>Workouts</title>
     <link href="js/workout.js">
-    <link rel="stylesheet" href="css/workout.css">
+    <link rel="stylesheet" href="css/Module.css">
 </head>
 <body>
-<div class="filter-container-Wk">
+<div class="filter-container">
     <form id="filterform">
         <label for="Trainingsziel">Trainingsziel</label>
         <select id="trainingsziel" onchange="applyFiltersWk()">

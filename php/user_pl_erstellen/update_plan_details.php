@@ -34,7 +34,7 @@ $sql = "
         wk.equipment,
         wk.Level AS level
     FROM
-        Link_Plan_Workout LPW
+        link_plan_workout LPW
     JOIN
         workouts wk ON LPW.workout_id = wk.workout_id
     WHERE
@@ -113,7 +113,7 @@ if ($level_count > 0) {
 
 // Update the workout details only if we have valid data
 $update_sql = "
-    UPDATE WorkoutPlan
+    UPDATE workoutplan
     SET
         ziel = ?,
         body_part = ?,

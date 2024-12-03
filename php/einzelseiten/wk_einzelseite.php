@@ -45,17 +45,17 @@ $sql = "
         eq.equipment_name as equipment_name,
         wk.creator_user_id
     FROM
-        Workouts wk
+        workouts wk
     LEFT JOIN
-        UserFavorites uf ON uf.workout_id = wk.workout_id AND uf.user_id = ?
+        userfavorites uf ON uf.workout_id = wk.workout_id AND uf.user_id = ?
     LEFT JOIN
-        Users us ON wk.creator_user_id = us.id
+        users us ON wk.creator_user_id = us.id
     LEFT JOIN
         trainingsziel zi ON wk.trainingsziel = zi.ziel_id
     LEFT JOIN
-        Muscle Mu ON wk.body_part = Mu.muscle_id
+        muscle Mu ON wk.body_part = Mu.muscle_id
     LEFT JOIN
-        Levels le ON wk.Level = le.level_id
+        levels le ON wk.Level = le.level_id
     LEFT JOIN
         equipment eq ON wk.equipment = eq.equipment_id
     WHERE
@@ -150,9 +150,9 @@ if ($result->num_rows > 0) {
         FROM 
             link_workout_exercise lwe
         JOIN 
-            Exercises ex ON lwe.exercise_id_fk = ex.ex_id
+            exercises ex ON lwe.exercise_id_fk = ex.ex_id
         LEFT JOIN 
-            Muscle mu ON ex.target_muscle = mu.muscle_id
+            muscle mu ON ex.target_muscle = mu.muscle_id
         LEFT JOIN
             equipment eq ON ex.equipment_requierd = eq.equipment_id
         LEFT JOIN

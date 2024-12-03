@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $level_name = $_POST['level_name'];
 
     $sql = "
-        UPDATE Workouts
+        UPDATE workouts
         SET workout_name = ?, description = ?, trainingsziel = ?, body_part = ?, equipment = ?, Level = ?
         WHERE workout_id = ?
     ";

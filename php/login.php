@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'], $_POST['passw
             }
 
             // Weiterleitung zur Hauptseite
-            header("Location: /main.php");
+            header("Location: /index.php");
             exit;
         } else {
             echo "Falsches Passwort.";

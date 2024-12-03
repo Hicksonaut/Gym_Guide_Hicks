@@ -10,10 +10,10 @@ include 'php/pl_filter.php';
     <meta charset="UTF-8">
     <title>Workouts</title>
     <link href="js/plan.js">
-    <link rel="stylesheet" href="css/plan.css">
+    <link rel="stylesheet" href="css/Module.css">
 </head>
 <body>
-<div class="filter-container-pl">
+<div class="filter-container">
     <form id="filterform">
         <label for="Trainingsziel">Trainingsziel</label>
         <select id="trainingsziel" onchange="applyFiltersPl()">

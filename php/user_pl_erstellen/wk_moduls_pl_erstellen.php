@@ -33,38 +33,42 @@ $sql = "
         e.equipment_name AS equipment,
         z.ziel_name AS ziel
     FROM
-        Workouts wk
+        workouts wk
     LEFT JOIN
-        Muscle M ON wk.body_part = M.muscle_id
+        muscle M ON wk.body_part = M.muscle_id
     LEFT JOIN
         equipment e ON wk.equipment = e.equipment_id
     LEFT JOIN 
         trainingsziel z ON wk.trainingsziel = z.ziel_id
+    WHERE 
+        wk.creator_user_id = ? OR wk.is_universal = 1
 ";
 $stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $userid);
 $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
-    echo "<div class='workout-container'>";
+    echo "<div class='module-container'>";
     while ($row = $result->fetch_assoc()) {
-        echo "<div class='workout-card' data-workout-id='" . htmlspecialchars($row['id']) . "'>";
+        echo "<div class='module-card' data-workout-id='" . htmlspecialchars($row['id']) . "'>";
 
-        echo "<div class='plus-icon' onclick='addToListPl(" . htmlspecialchars($row['id']) . ")'>+</div>";
+        echo "<div class='plus-icon' onclick='addToListPl(" . htmlspecialchars($row['id']) . ")'>
+        <img class='plus-icon-img' src='../svg/plus.svg' alt='plus' title='plus'>
+</div>";
 
         if (!empty($row['Bild'])) {
-            echo "<img class='workout-image' src='/img/Workout_bilder/" . htmlspecialchars($row["Bild"]) . "' >";
+            echo "<img class='module-image' src='/img/workout_bilder/" . htmlspecialchars($row["Bild"]) . "' >";
         } else {
-            echo "<img class='workout-image' src='/img/image-not-found.png' '>";
+            echo "<img class='module-image' src='/img/image-not-found.png' '>";
         }
-        echo "<h2 class='workout-name'>" . htmlspecialchars($row["name"]) . "</h2>";
+        echo "<h2 class='module-name'>" . htmlspecialchars($row["name"]) . "</h2>";
         echo "<div class='container-attribut'>";
-        echo "<p class='workout-attribut-border'>" . htmlspecialchars($row["ziel"]) . "</p>";
-        echo "<p class='workout-attribut-border'>" . htmlspecialchars($row["muscle"]) . "</p>";
-        echo "<p class='workout-attribut-border'>" . htmlspecialchars($row["equipment"]) . "</p>";
+        echo "<p class='module-attribut-border-three'>" . htmlspecialchars($row["ziel"]) . "</p>";
+        echo "<p class='module-attribut-border-three'>" . htmlspecialchars($row["muscle"]) . "</p>";
+        echo "<p class='module-attribut-border-three'>" . htmlspecialchars($row["equipment"]) . "</p>";
         echo "</div>";
         echo "</div>";
-
     }
     echo "</div>";
 } else {

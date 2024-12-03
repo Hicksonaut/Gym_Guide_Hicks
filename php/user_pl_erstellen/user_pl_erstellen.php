@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    $stmt = $conn->prepare("SELECT name FROM WorkoutPlan WHERE name = ?");
+    $stmt = $conn->prepare("SELECT name FROM workoutplan WHERE name = ?");
     $stmt->bind_param("s", $name);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Der Name existiert bereits.";
     } else {
         if (move_uploaded_file($_FILES["pl_bild"]["tmp_name"], $uploadfile)) {
-            $stmt = $conn->prepare("INSERT INTO WorkoutPlan (name,Bild,creator_user_id) VALUES (?,?,?);");
+            $stmt = $conn->prepare("INSERT INTO workoutplan (name,Bild,creator_user_id) VALUES (?,?,?);");
             $stmt->bind_param("ssi", $name, $uniquefilename, $user_id);
 
             if ($stmt->execute()) {
@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <title>User_wk_erstellen</title>
     <link href="">
-    <link rel="stylesheet" href="../../css/Exercise.css">
+    <link rel="stylesheet" href="../../css/Module.css">
     <link rel="stylesheet" href="../../css/user_wk_erstellen.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 <div class="container_main">
     <div class="form_main">
-        <h2>Add own Workout</h2>
+        <h2>Add own Plan</h2>
         <form action="" method="post" enctype="multipart/form-data" id="createPlanForm">
             <div class="form_group">
                 <label>Plan Titel</label>

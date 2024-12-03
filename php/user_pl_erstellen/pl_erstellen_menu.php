@@ -4,7 +4,7 @@ include '../check_login.php';
 include '../wk_filter.php';
 global $conn;
 $plan_id = $_SESSION['plan_id'];
-$sql = "SELECT name FROM WorkoutPlan WHERE plan_id = $plan_id";
+$sql = "SELECT name FROM workoutplan WHERE plan_id = $plan_id";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -21,7 +21,6 @@ if ($row = $result->fetch_assoc()) {
     <meta charset="UTF-8">
     <title>Exercise</title>
     <link href="../../js/pl_creator.js">
-    <link rel="stylesheet" href="../../css/workout.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
@@ -95,8 +94,8 @@ if ($row = $result->fetch_assoc()) {
         </select>
 
         <button type="button" id="resetButton" onclick="resetFiltersPl()">Reset Filters</button>
-        <input type="search" id="exercise_search" placeholder="Search Exercises:..." oninput="applyFiltersPlCreator()">
-        <button type="button" id="wk_erstellen_abbrechen" onclick="Pl_abbrechen()">Abbrechen</button>
+        <input type="search" class="module_search" placeholder="Search Exercises:..." oninput="applyFiltersPlCreator()">
+        <button type="button" id="wk_erstellen_abbrechen" onclick="Pl_abbrechen()">Löschen</button>
         <button type="button" id="Workout_Fertigstellen" onclick="loadplan()">Workout Fertigstellen</button>
     </form>
 </div>

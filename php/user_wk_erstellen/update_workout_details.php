@@ -110,7 +110,7 @@ if ($level_count > 0) {
 
 // Update the workout details only if we have valid data
 $update_sql = "
-    UPDATE Workouts
+    UPDATE workouts
     SET
         trainingsziel = ?,
         body_part = ?,

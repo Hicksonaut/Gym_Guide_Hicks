@@ -21,7 +21,7 @@ if ($row = $result->fetch_assoc()) {
     <meta charset="UTF-8">
     <title>Exercise</title>
     <link href="../../js/wk_creator.js">
-    <link rel="stylesheet" href="../../css/Exercise.css">
+    <link rel="stylesheet" href="../../css/Module.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
@@ -73,8 +73,8 @@ if ($row = $result->fetch_assoc()) {
         </select>
 
         <button type="button" id="resetButton" onclick="resetFilters()">Reset Filters</button>
-        <input type="search" id="exercise_search" placeholder="Search Exercises:..." oninput="applyFiltersWkCreator()">
-        <button type="button" id="wk_erstellen_abbrechen" onclick="WK_abbrechen()">Abbrechen</button>
+        <input type="search" class="module_search" placeholder="Search Exercises:..." oninput="applyFiltersWkCreator()">
+        <button type="button" id="wk_erstellen_abbrechen" onclick="WK_abbrechen()">Löschen</button>
         <button type="button" id="Workout_Fertigstellen" onclick="loadworkout()">Workout Fertigstellen</button>
     </form>
 </div>

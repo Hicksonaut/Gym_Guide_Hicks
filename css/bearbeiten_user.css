@@ -9,7 +9,7 @@ html, body {
     background-color: black;
 }
 
-.container {
+.container_main {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +18,7 @@ html, body {
     color: white;
 }
 
-.register_field {
+.form_main {
     background: rgb(35,35,35);
     display: flex;
     flex-direction: column;
@@ -31,17 +31,17 @@ html, body {
 }
 
 .form_group {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     margin-top: 10px;
 }
+
 
 h2 {
     margin-bottom: 20px;
     font-weight: bold;
 }
 
+textarea,
 input {
     padding: 10px;
     border-radius: 5px;
@@ -64,9 +64,4 @@ input[type="submit"] {
 
 input, button {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-a {
-  color: #D18239;
-
 }

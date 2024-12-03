@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "Plan ID: " . $plan_id . ", User ID: " . $user_id; // Zum Testen der übergebenen IDs
 
     // SQL-Anweisung zum Löschen
-    $sql = "DELETE FROM WorkoutPlan WHERE plan_id = ?";
+    $sql = "DELETE FROM workoutplan WHERE plan_id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $plan_id );
 

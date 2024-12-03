@@ -29,7 +29,7 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 
 // Workout-Daten aus der Datenbank abrufen, um das Formular vorzubefüllen
-$sql = "SELECT workout_name, wk_bild, description FROM Workouts WHERE workout_id = ?";
+$sql = "SELECT workout_name, wk_bild, description FROM workouts WHERE workout_id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $workout_id);
 $stmt->execute();
@@ -66,12 +66,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // SQL-Abfrage vorbereiten: Unterscheidung ob Bild aktualisiert wird oder nicht
     if ($bild_hochgeladen) {
         // Wenn ein neues Bild hochgeladen wurde, auch das Bild aktualisieren
-        $sql_update = "UPDATE Workouts SET workout_name = ?, description = ?, wk_bild = ? WHERE workout_id = ?";
+        $sql_update = "UPDATE workouts SET workout_name = ?, description = ?, wk_bild = ? WHERE workout_id = ?";
         $stmt_update = $conn->prepare($sql_update);
         $stmt_update->bind_param("sssi", $name, $description, $uniquefilename, $workout_id);
     } else {
         // Wenn kein neues Bild hochgeladen wurde, nur Name und Beschreibung aktualisieren
-        $sql_update = "UPDATE Workouts SET workout_name = ?, description = ? WHERE workout_id = ?";
+        $sql_update = "UPDATE workouts SET workout_name = ?, description = ? WHERE workout_id = ?";
         $stmt_update = $conn->prepare($sql_update);
         $stmt_update->bind_param("ssi", $name, $description, $workout_id);
     }
@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Workout Bearbeiten</title>
-    <link rel="stylesheet" href="../../css/einzelseite.css">
+    <link rel="stylesheet" href="../../css/bearbeiten_user.css">
 </head>
 <body>
 <div class="container_main">
@@ -111,7 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="form_group">
                 <label for="wk_bild">Bild aktualisieren:</label>
                 <!-- Aktuelles Bild anzeigen -->
-                <img src="../../img/workout_bilder/<?php echo !empty($row['wk_bild']) ? htmlspecialchars($row['wk_bild']) : 'random.png'; ?>" alt="Workout Bild" style="max-width: 200px;">
+                <!--<img src="../../img/workout_bilder/<?php echo !empty($row['wk_bild']) ? htmlspecialchars($row['wk_bild']) : 'random.png'; ?>" alt="Workout Bild" style="max-width: 200px;"> -->
                 <!-- Datei-Upload für neues Bild -->
                 <input type="file" id="wk_bild" name="wk_bild">
             </div>

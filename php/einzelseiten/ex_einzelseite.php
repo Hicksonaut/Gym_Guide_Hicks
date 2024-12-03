@@ -50,19 +50,19 @@ $sql = "
     FROM
         exercises ex
     LEFT JOIN
-        UserFavorites uf ON uf.exercise_id = ex_id AND uf.user_id = ?
+        userfavorites uf ON uf.exercise_id = ex_id AND uf.user_id = ?
     LEFT JOIN
-        Muscle m ON ex.target_muscle = m.muscle_id
+        muscle m ON ex.target_muscle = m.muscle_id
     LEFT JOIN
         trainingsziel z ON ex.exercise_type = z.ziel_id
     LEFT JOIN
         equipment eq ON ex.equipment_requierd = eq.equipment_id
     LEFT JOIN
-        Mechanics Me ON ex.Mechanics = me.mechanics_id
+        mechanics Me ON ex.Mechanics = Me.mechanics_id
     LEFT JOIN
         force_type fo ON ex.force_type = fo.force_id
     LEFT JOIN
-        Levels le ON ex.experience_level = le.level_id
+        levels le ON ex.experience_level = le.level_id
     WHERE
         ex.ex_id = ?
 ";
