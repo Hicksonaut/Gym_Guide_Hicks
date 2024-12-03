@@ -6,16 +6,16 @@ function applyFilters() {
     var liked = document.getElementById('liked').value.toUpperCase();
     var searchQuery = document.getElementById('exercise_search').value.toUpperCase();
 
-    var exercises = document.getElementsByClassName('exercise-card');
+    var exercises = document.getElementsByClassName('module-card');
 
     for (var i = 0; i < exercises.length; i++) {
         var exercise = exercises[i];
 
-        var txtMuscle = exercise.querySelector('.exercise-attribut-border:nth-child(1)').innerText.toUpperCase();
-        var txtEquipment = exercise.querySelector('.exercise-attribut-border:nth-child(2)').innerText.toUpperCase();
-        var txtMechanics = exercise.querySelector('.exercise-attribut-border:nth-child(3)').innerText.toUpperCase();
-        var txtExperience = exercise.querySelector('.exercise-attribut-border:nth-child(4)').innerText.toUpperCase();
-        var txtName = exercise.querySelector('.exercise-name').innerText.toUpperCase();
+        var txtMuscle = exercise.querySelector('.module-attribut-border-four:nth-child(1)').innerText.toUpperCase();
+        var txtEquipment = exercise.querySelector('.module-attribut-border-four:nth-child(2)').innerText.toUpperCase();
+        var txtMechanics = exercise.querySelector('.module-attribut-border-four:nth-child(3)').innerText.toUpperCase();
+        var txtExperience = exercise.querySelector('.module-attribut-border-four:nth-child(4)').innerText.toUpperCase();
+        var txtName = exercise.querySelector('.module-name').innerText.toUpperCase();
         var txtliked = exercise.dataset.likedex.toUpperCase();
 
         if (
@@ -40,7 +40,8 @@ function resetFilters() {
     document.getElementById('experienceLevel').value = "";
     document.getElementById('liked').value = "";
 
-    var exercises = document.getElementsByClassName('exercise-card');
+
+    var exercises = document.getElementsByClassName('module-card');
     for (var i = 0; i < exercises.length; i++) {
         exercises[i].style.display = "";
     }

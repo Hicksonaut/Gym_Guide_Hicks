@@ -226,10 +226,13 @@ body {
 }
 
 .User_Profile_Navbar_Window a {
-    color: white;
     padding: 10px;
-    text-decoration: none;
     display: block;
+}
+
+a {
+    color: white;
+    text-decoration: none;
     font-family: Nunito, sans-serif;
 }
 

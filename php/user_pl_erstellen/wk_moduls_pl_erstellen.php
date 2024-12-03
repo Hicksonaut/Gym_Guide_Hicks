@@ -24,6 +24,12 @@ if (isset($_SESSION['user_id'])) {
     exit();
 }
 
+$plan_id = $_SESSION['plan_id'];
+if (!$plan_id) {
+    echo "Keine Datenbank-ID angegeben.<br>";
+    exit();
+}
+
 $sql = "
     SELECT
         wk.workout_id AS id,
@@ -31,7 +37,13 @@ $sql = "
         wk.wk_bild AS Bild, 
         M.muscle_name AS muscle,
         e.equipment_name AS equipment,
-        z.ziel_name AS ziel
+        z.ziel_name AS ziel,
+        EXISTS(
+            SELECT 1
+            FROM link_plan_workout lpw 
+            WHERE lpw.workout_id = wk.workout_id
+            AND lpw.plan_id = ?
+        ) AS is_in_plan
     FROM
         workouts wk
     LEFT JOIN
@@ -44,7 +56,7 @@ $sql = "
         wk.creator_user_id = ? OR wk.is_universal = 1
 ";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $userid);
+$stmt->bind_param("ii", $plan_id, $userid);
 $stmt->execute();
 $result = $stmt->get_result();
 
@@ -53,9 +65,15 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo "<div class='module-card' data-workout-id='" . htmlspecialchars($row['id']) . "'>";
 
-        echo "<div class='plus-icon' onclick='addToListPl(" . htmlspecialchars($row['id']) . ")'>
-        <img class='plus-icon-img' src='../svg/plus.svg' alt='plus' title='plus'>
-</div>";
+        if ($row['is_in_plan']) {
+            echo "<div class='plus-icon' onclick='addToListPl(" . htmlspecialchars($row['id']) . ")'>
+            <img class='plus-icon-img' src='../svg/check-circle.svg' alt='check' title='check'>
+            </div>";
+        } else {
+            echo "<div class='plus-icon' onclick='addToListPl(" . htmlspecialchars($row['id']) . ")'>
+            <img class='plus-icon-img' src='../svg/plus.svg' alt='plus' title='plus'>
+            </div>";
+        }
 
         if (!empty($row['Bild'])) {
             echo "<img class='module-image' src='/img/workout_bilder/" . htmlspecialchars($row["Bild"]) . "' >";

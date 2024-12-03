@@ -36,31 +36,30 @@ $stmt->close();
 <body>
 <div class="navbar_left" id="ID_Navbar_Left">
     <img src="svg/Logo.svg" alt="test" id="Logo_Icon_Top_Left">
-    <img src="svg/home.svg" alt="Home" id="Home_Icon" class="icon">
-    <h3 class="Navbar_Left_Text">Startseite</h3>
+    <a href="#" id="HomeLink" onclick="loadHome()">
+        <img src="svg/home.svg" alt="Home" id="Home_Icon" class="icon">
+        <h3 class="Navbar_Left_Text">Startseite</h3>
+    </a>
+    <!--
     <br>
     <img src="svg/graph.svg" alt="Stats" class="icon">
     <h3 class="Navbar_Left_Text">Stats</h3>
-    <!--<br>
+    <br>
     <img src="svg/calender.svg" alt="Ball" class="icon">
     <h3 class="Navbar_Left_Text">Kalender</h3>
     <br>-->
-    <br>
     <a href="#" id="exerciseLink" onclick="loadexercise()">
         <img src="svg/exersice.svg" alt="Exercise" class="icon">
         <h3 class="Navbar_Left_Text">Übungen</h3>
     </a>
-    <br>
     <a href="#" id="workoutLink" onclick="loadworkout()">
         <img src="svg/workout.svg" alt="Workout" class="icon">
         <h3 class="Navbar_Left_Text">Workouts</h3>
     </a>
-    <br>
     <a href="#" id="planLink" onclick="loadplan()">
         <img src="svg/Plan.svg" alt="Plan" class="icon">
         <h3 class="Navbar_Left_Text">Pläne</h3>
     </a>
-    <br>
     <a href="php/logout.php">
         <img src="svg/Log_Out.svg" alt="Log_Out" id="Log_Out_Icon" class="icon">
     </a>
@@ -100,30 +99,7 @@ $stmt->close();
 <!-- Ab hier kommt der Main Teil alles andere da rüber ist nur Navbars und andere Pop Ups -->
 
 <div class="Main_Content" id="mainContent">
-    <!--<div class="flex_1">
-        <div class="Termine_der_Woche">
 
-        </div>
-        <div class="Kleine_Flex_Box">
-            <div class="Gewicht_Anzeige">
-                <img src="svg/weight.svg" alt="Waage" id="Waage_Icon">
-                <div>
-                    <p class="Text_in_Flex_Box">Gewicht</p>
-                    <p class="Text_in_Flex_Box">+5.2kg</p>
-                </div>
-                <img src="svg/test_graph.svg" alt="Graph" class="Graph_Icon">
-            </div>
-            <div class="Kalorien_Anzeige">
-                <img src="svg/calories.svg" alt="Calories" id="Kalorien_Icon">
-                <div>
-                    <p class="Text_in_Flex_Box">Kalorien</p>
-                    <p class="Text_in_Flex_Box">-1.124</p>
-                </div>
-                <img src="svg/test_graph.svg" alt="Graph" class="Graph_Icon">
-            </div>
-        </div>
-    </div>
-    -->
 
 </div>
 
@@ -141,6 +117,19 @@ $stmt->close();
         }
     }
 
+    function closeNavbar() {
+        var navbar = document.querySelector('.navbar_left');
+        var hamburgerIcon = document.querySelector('.hamburger_menu');
+
+        if (navbar.classList.contains('show')) {
+            navbar.classList.remove('show'); // Schließt die Navbar
+        }
+
+        if (hamburgerIcon.classList.contains('change')) {
+            hamburgerIcon.classList.remove('change'); // Setzt das Hamburger-Icon zurück
+        }
+    }
+
     function UserFunction() {
         var navbar = document.querySelector('.navbar_left');
         var User_navbar = document.querySelector('.User_Profile_Navbar_Window');
@@ -154,16 +143,25 @@ $stmt->close();
         }
     }
 
+
     function loadexercise(){
-        loadContent('exercise.php')
+        closeNavbar();
+        loadContent('exercise.php');
     }
 
     function loadworkout() {
+        closeNavbar();
         loadContent('workout.php');
     }
 
     function loadplan() {
+        closeNavbar();
         loadContent('plan.php');
+    }
+
+    function loadHome() {
+        closeNavbar();
+        loadContent('Home.php');
     }
 
     function load_user_erstellt_workout() {
@@ -245,6 +243,7 @@ $stmt->close();
     }
 
     document.addEventListener('DOMContentLoaded', function () {
+        loadHome(); // damit automatische die Home Seite angezit wird sowie man auf die Webseite kommt.
         document.getElementById('mainContent').addEventListener('submit', function (e) {
             e.preventDefault();
             if (e.target && e.target.id === 'createWorkoutForm') {
@@ -260,7 +259,7 @@ $stmt->close();
                     })
                     .catch(error => {
                         console.error('Fehler beim Erstellen des Workouts:', error);
-                        alert("Fehler beim Erstellen des Workouts.");
+                        //alert("Fehler beim Erstellen des Workouts.");
                     });
             } else if (e.target && e.target.id === 'createPlanForm') {
                 let formData = new FormData(e.target);
@@ -275,7 +274,7 @@ $stmt->close();
                     })
                     .catch(error => {
                         console.error('Fehler beim Erstellen des Plans:', error);
-                        alert("Fehler beim Erstellen des Plans.");
+                        //alert("Fehler beim Erstellen des Plans.");
                     });
             } else if (e.target && e.target.id === 'UpdateWorkoutForm') {
                 let formData = new FormData(e.target);
@@ -286,12 +285,12 @@ $stmt->close();
                     .then(response => response.text())
                     .then(data => {
                         console.log(data);
-                        alert("Workout erfolgreich aktualisiert!");
+                        //alert("Workout erfolgreich aktualisiert!");
                         load_wk_erstellen_menu();
                     })
                     .catch(error => {
                         console.error('Fehler beim Aktualisieren des Workouts:', error);
-                        alert("Fehler beim Aktualisieren des Workouts.");
+                        //alert("Fehler beim Aktualisieren des Workouts.");
                     });
             } else if (e.target && e.target.id === 'UpdatePlanForm') {
                 let formData = new FormData(e.target);
@@ -302,12 +301,10 @@ $stmt->close();
                     .then(response => response.text())
                     .then(data => {
                         console.log(data);
-                        alert("Plan erfolgreich aktualisiert!");
                         load_pl_erstellen_menu();
                     })
                     .catch(error => {
                         console.error('Fehler beim Aktualisieren des Plans:', error);
-                        alert("Fehler beim Aktualisieren des Plans.");
                     });
             }
         });

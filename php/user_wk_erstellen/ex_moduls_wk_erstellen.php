@@ -24,6 +24,12 @@ if (isset($_SESSION['user_id'])) {
     exit();
 }
 
+$workout_id = $_SESSION['workout_id'];
+if (!$workout_id) {
+    echo "Keine Workout ID angegeben.<br>";
+    exit();
+}
+
 $sql = "
     SELECT
         ex.ex_id,
@@ -32,7 +38,13 @@ $sql = "
         M.muscle_name AS target_muscle_name,
         e.equipment_name AS e_name,
         me.mechanics_name AS me_name,
-        L.level_name AS experience_level_name
+        L.level_name AS experience_level_name,
+        EXISTS (
+            SELECT 1
+            FROM link_workout_exercise lwe
+            WHERE lwe.exercise_id_fk = ex.ex_id
+            AND lwe.workout_id_fk = ?
+            ) AS is_in_workout
     FROM
         exercises ex
     LEFT JOIN
@@ -45,6 +57,7 @@ $sql = "
         levels L ON ex.experience_level = L.level_id
 ";
 $stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $workout_id);
 $stmt->execute();
 $result = $stmt->get_result();
 
@@ -53,12 +66,15 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo "<div class='module-card' data-exercise-id='" . htmlspecialchars($row['ex_id']) . "'>";
 
-
-
-        echo "<div class='plus-icon' onclick='addToList(" . htmlspecialchars($row['ex_id']) . ")'>
-        <img src='../svg/plus.svg' alt='plus' title='plus'>
-</div>";
-
+        if($row['is_in_workout']) {
+            echo "<div class='plus-icon' onclick='addToList(".htmlspecialchars($row['ex_id']).")'>
+            <img class='plus-icon-img' src='../svg/check-circle.svg' alt='check' title='check'>
+            </div>";
+        } else {
+            echo "<div class='plus-icon' onclick='addToList(" . htmlspecialchars($row['ex_id']) . ")'>
+            <img class='plus-icon-img' src='../svg/plus.svg' alt='plus' title='plus'>
+            </div>";
+        }
 
         if (!empty($row['bild_ex'])) {
             echo "<img class='module-image' src='/img/Exercise_bilder/" . htmlspecialchars($row["bild_ex"]) . "' >";
@@ -73,14 +89,10 @@ if ($result->num_rows > 0) {
         echo "<p class='module-attribut-border-four'>" . htmlspecialchars($row["experience_level_name"]) . "</p>";
         echo "</div>";
         echo "</div>";
-
     }
     echo "</div>";
 } else {
     echo "Keine Ergebnisse gefunden.";
 }
-
 $conn->close();
-
 ?>
-

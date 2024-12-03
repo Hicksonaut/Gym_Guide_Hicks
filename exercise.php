@@ -10,10 +10,6 @@ include 'php/ex_filter.php';
     <meta charset="UTF-8">
     <title>Exercise</title>
     <link rel="stylesheet" href="css/Module.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
-          rel="stylesheet">
     <script src="js/exersice.js"></script>
 </head>
 <body>
@@ -71,7 +67,7 @@ include 'php/ex_filter.php';
         </select>
 
         <button type="button" id="resetButton" onclick="resetFilters()">Reset Filters</button>
-        <input type="search" class="module_search" placeholder="Search Exercises:..." oninput="applyFilters()">
+        <input type="search" class="module_search" id="exercise_search" placeholder="Search Exercises:..." oninput="applyFilters()">
     </form>
 </div>
 

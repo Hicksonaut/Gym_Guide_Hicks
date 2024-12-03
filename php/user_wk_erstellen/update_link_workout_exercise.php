@@ -8,13 +8,10 @@ if (!isset($_SESSION['workout_id'])) {
 }
 
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $workout_id = $_SESSION['workout_id'];
     $exercise_id = $_POST["exercise_id"];
 
-    echo "Workout ID: " . $workout_id . "<br>";
-    echo "Exercise ID: " . $exercise_id . "<br>";
 
     // Überprüfen, ob die Übung bereits dem Workout zugeordnet ist
     $stmt = $conn->prepare("SELECT * FROM link_workout_exercise WHERE workout_id_fk = ? AND exercise_id_fk = ?");
@@ -35,13 +32,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Übung ist nicht zugeordnet, also fügen wir sie hinzu
         $stmt = $conn->prepare("INSERT INTO link_workout_exercise (workout_id_fk, exercise_id_fk) VALUES (?, ?)");
         if (!$stmt) {
-            die("SQL Error: " . $conn->error);
+            die("SQL Error:");
         }
         $stmt->bind_param("ii", $workout_id, $exercise_id);
         if ($stmt->execute()) {
-            echo "Workout ID: " . $workout_id . "<br>Exercise ID: " . $exercise_id . "<br>added";
+            echo "added";
         } else {
-            echo "Error: " . $stmt->error;
+            echo "Error: ";
         }
         $stmt->close();
     }

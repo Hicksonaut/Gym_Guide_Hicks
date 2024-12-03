@@ -96,7 +96,7 @@ if ($row = $result->fetch_assoc()) {
         <button type="button" id="resetButton" onclick="resetFiltersPl()">Reset Filters</button>
         <input type="search" class="module_search" placeholder="Search Exercises:..." oninput="applyFiltersPlCreator()">
         <button type="button" id="wk_erstellen_abbrechen" onclick="Pl_abbrechen()">Löschen</button>
-        <button type="button" id="Workout_Fertigstellen" onclick="loadplan()">Workout Fertigstellen</button>
+        <button type="button" id="Workout_Fertigstellen" onclick="load_einzelseite_pl(<?php echo htmlspecialchars($plan_id); ?>)">Workout Fertigstellen</button>
     </form>
 </div>
 <div class="verfuegbare_wk_moduls">

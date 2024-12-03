@@ -3,7 +3,8 @@ function applyFiltersWkCreator() {
     var equipment = document.getElementById('equipment').value.toUpperCase();
     var mechanics = document.getElementById('mechanics').value.toUpperCase();
     var experienceLevel = document.getElementById('experienceLevel').value.toUpperCase();
-    var searchQuery = document.getElementById('exercise_search').value.toUpperCase();
+   // var searchQuery = document.getElementById('exercise_search').value.toUpperCase();
+    var added = document.getElementById('added').value.toUpperCase();
 
     var exercises = document.getElementsByClassName('exercise-card');
 
@@ -15,13 +16,15 @@ function applyFiltersWkCreator() {
         var txtMechanics = exercise.querySelector('.exercise-attribut-border:nth-child(3)').innerText.toUpperCase();
         var txtExperience = exercise.querySelector('.exercise-attribut-border:nth-child(4)').innerText.toUpperCase();
         var txtName = exercise.querySelector('.exercise-name').innerText.toUpperCase();
+        var txtadded = exercise.dataset.added.toUpperCase();
 
         if (
             (targetMuscle === "" || targetMuscle === txtMuscle) &&
             (equipment === "" || equipment === txtEquipment) &&
             (mechanics === "" || mechanics === txtMechanics) &&
             (experienceLevel === "" || experienceLevel === txtExperience) &&
-            (searchQuery === "" || txtName.includes(searchQuery) || txtMuscle.includes(searchQuery) || txtEquipment.includes(searchQuery) || txtMechanics.includes(searchQuery) || txtExperience.includes(searchQuery))
+            (added === "" || added === txtadded)
+        //    (searchQuery === "" || txtName.includes(searchQuery) || txtMuscle.includes(searchQuery) || txtEquipment.includes(searchQuery) || txtMechanics.includes(searchQuery) || txtExperience.includes(searchQuery))
         ) {
             exercise.style.display = "";
         } else {
@@ -35,6 +38,7 @@ function resetFilters() {
     document.getElementById('equipment').value = "";
     document.getElementById('mechanics').value = "";
     document.getElementById('experienceLevel').value = "";
+    document.getElementById('added').value = "";
 
     var exercises = document.getElementsByClassName('exercise-card');
     for (var i = 0; i < exercises.length; i++) {
@@ -55,13 +59,18 @@ function addToList(exerciseId) {
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             // Erfolg: Rückmeldung anzeigen oder UI anpassen
-            var response = xhr.responseText;
+            var response = xhr.responseText.trim();
+            var card = document.querySelector(`.module-card[data-exercise-id='${exerciseId}']`);
+            var icon = card.querySelector(".plus-icon-img");
+
             if (response == "added") {
-                alert("Übung hinzugefügt.");
+                icon.src = "../svg/check-circle.svg";
+                icon.title = "check";
             } else if (response == "removed") {
-                alert("Übung entfernt.");
+                icon.src = "../svg/plus.svg";
+                icon.title = "plus";
             } else {
-               /* alert("Fehler: " + response);*/
+                alert("Fehler: " + response);
             }
         }
     };
@@ -94,7 +103,7 @@ function WK_abbrechen() {
             var response = xhr.responseText;
             console.log("Server Response:", response); // Debug-Ausgabe
             if (response == "deleted") {
-                alert("Workout abgebrochen und gelöscht.");
+                //("Workout abgebrochen und gelöscht.");
                 // Optionale UI-Aktualisierung, z.B. Weiterleitung oder Entfernen der UI-Elemente
             } else {
                // alert("Fehler beim Abbrechen des Workouts: " + response);

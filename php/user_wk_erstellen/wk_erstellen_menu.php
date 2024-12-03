@@ -1,5 +1,5 @@
 <?php
-global $target_muscles, $equipment_requierd, $mechanics, $experience_level,$liked;
+global $target_muscles, $equipment_requierd, $mechanics, $experience_level,$liked,$aditional;
 include '../check_login.php';
 include '../ex_filter.php';
 global $conn;
@@ -72,10 +72,21 @@ if ($row = $result->fetch_assoc()) {
             ?>
         </select>
 
+        <label for="added">Hinzugefügt:</label>
+        <select id="added" onchange="applyFiltersWkCreator()">
+            <option value="">All</option>
+            <?php
+            foreach ($aditional as $added) {
+                $displayText = $added == 1 ? "true" : "false";
+                echo '<option value="'.$added.'">'.$displayText.'</option>';
+            }
+            ?>
+        </select>
+
         <button type="button" id="resetButton" onclick="resetFilters()">Reset Filters</button>
         <input type="search" class="module_search" placeholder="Search Exercises:..." oninput="applyFiltersWkCreator()">
         <button type="button" id="wk_erstellen_abbrechen" onclick="WK_abbrechen()">Löschen</button>
-        <button type="button" id="Workout_Fertigstellen" onclick="loadworkout()">Workout Fertigstellen</button>
+        <button type="button" id="Workout_Fertigstellen" onclick="load_einzelseite_wk(<?php echo htmlspecialchars($workout_id); ?>)">Workout Fertigstellen</button>
     </form>
 </div>
 <div class="verfuegbare_ex_moduls">

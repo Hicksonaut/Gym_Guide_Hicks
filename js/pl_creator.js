@@ -42,7 +42,7 @@ function resetFiltersPl() {
     document.getElementById('level').value = "";
     document.getElementById('liked').value = "";
 
-    var workouts = document.getElementsByClassName('workout-card');
+    var workouts = document.getElementsByClassName('module-card');
     for (var i = 0; i < workouts.length; i++) {
         workouts[i].style.display = "";
     }
@@ -56,18 +56,22 @@ function addToListPl(workoutId) {
     }
 
     var xhr = new XMLHttpRequest();
-    xhr.open("POST","../php/user_pl_erstellen/update_link_plan_workout.php",true);
+    xhr.open("POST", "../php/user_pl_erstellen/update_link_plan_workout.php", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             // Erfolg: Rückmeldung anzeigen oder UI anpassen
-            var response = xhr.responseText;
+            var response = xhr.responseText.trim();
+            var card = document.querySelector(`.module-card[data-workout-id='${workoutId}']`);
+            var icon = card.querySelector(".plus-icon-img");
             if (response == "added") {
-                alert("Workout hinzugefügt.");
+                icon.src = "../svg/check-circle.svg";
+                icon.title = "check";
             } else if (response == "removed") {
-                alert("Workout entfernt.");
+                icon.src = "../svg/plus.svg";
+                icon.title = "plus";
             } else {
-                /* alert("Fehler: " + response);*/
+                alert("Fehler: " + response);
             }
         }
     };
@@ -100,7 +104,7 @@ function Pl_abbrechen() {
             var response = xhr.responseText;
             console.log("Server Response:", response); // Debug-Ausgabe
             if (response == "deleted") {
-                alert("Plan abgebrochen und gelöscht.");
+                //alert("Plan abgebrochen und gelöscht.");
                 // Optionale UI-Aktualisierung, z.B. Weiterleitung oder Entfernen der UI-Elemente
             } else {
                 // alert("Fehler beim Abbrechen des Workouts: " + response);

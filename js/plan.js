@@ -7,14 +7,14 @@ function applyFiltersPl() {
     var liked = document.getElementById('liked').value.toUpperCase();
     var tage = document.getElementById('trainingstage').value;
 
-    var plans = document.getElementsByClassName('plan-card');
+    var plans = document.getElementsByClassName('module-card');
 
     for (var i = 0; i < plans.length; i++) {
         var plan = plans[i];
 
-        var txtziel = plan.querySelector('.plan-attribut-border:nth-child(1)').innerText.toUpperCase();
-        var txtbody = plan.querySelector('.plan-attribut-border:nth-child(2)').innerText.toUpperCase();
-        var txtequipment = plan.querySelector('.plan-attribut-border:nth-child(3)').innerText.toUpperCase();
+        var txtziel = plan.querySelector('.module-attribut-border-four:nth-child(1)').innerText.toUpperCase();
+        var txtbody = plan.querySelector('.module-attribut-border-four:nth-child(2)').innerText.toUpperCase();
+        var txtequipment = plan.querySelector('.module-attribut-border-four:nth-child(3)').innerText.toUpperCase();
 
         var txtuniversal = plan.dataset.isUniversal.toUpperCase();
         var txtlevel = plan.dataset.level.toUpperCase();
@@ -46,7 +46,7 @@ function resetFiltersPl() {
     document.getElementById('liked').value = "";
     document.getElementById('trainingstage').value = "";
 
-    var plans = document.getElementsByClassName('plan-card');
+    var plans = document.getElementsByClassName('module-card');
     for (var i = 0; i < plans.length; i++) {
         plans[i].style.display = "";
     }
@@ -55,13 +55,11 @@ function resetFiltersPl() {
 function toggleLikePl(element, plan_id) {
     event.stopPropagation();
 
-    alert('test');
-
     element.classList.toggle('active');
     const liked = element.classList.contains('active') ? 1 : 0;
     const bodyData = `plan_id=${encodeURIComponent(plan_id)}&liked=${encodeURIComponent(liked)}`;
 
-    const icon = element.querySelector('img.heart-icon-pl')
+    const icon = element.querySelector('img.heart-icon')
     if (liked) {
         icon.src = "../svg/heart_filled.svg"
     } else {

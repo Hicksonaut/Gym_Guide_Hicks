@@ -8,7 +8,6 @@ if (!isset($_SESSION['plan_id'])) {
 }
 
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $plan_id = $_SESSION['plan_id'];
     $workout_id = $_POST["workout_id"];
@@ -32,11 +31,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Übung ist nicht zugeordnet, also fügen wir sie hinzu
         $stmt = $conn->prepare("INSERT INTO link_plan_workout (plan_id, workout_id) VALUES (?, ?)");
         if (!$stmt) {
-            die("SQL Error: " . $conn->error);
+            die("SQL Error:");
         }
         $stmt->bind_param("ii", $plan_id, $workout_id);
         if ($stmt->execute()) {
-            echo "Plan ID: " . $plan_id . "<br>Workout ID: " . $workout_id . "<br>added";
+            echo "added";
         } else {
             echo "Error: " . $stmt->error;
         }
