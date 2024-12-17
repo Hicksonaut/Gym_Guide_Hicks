@@ -315,11 +315,10 @@ $stmt->close();
 
 
 </script>
-<script src="js/exersice.js"></script>
-<script src="js/workout.js"></script>
 <script src="js/wk_creator.js"></script>
-<script src="js/plan.js"></script>
 <script src="js/pl_creator.js"></script>
+<script src="js/modules.js"></script>
+
 
 
 </body>

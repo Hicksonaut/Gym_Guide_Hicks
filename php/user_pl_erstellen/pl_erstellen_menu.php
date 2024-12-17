@@ -32,7 +32,7 @@ if ($row = $result->fetch_assoc()) {
 <div class="filter-container">
     <form id="filterForm">
         <label for="Trainingsziel">Trainingsziel</label>
-        <select id="trainingsziel" onchange="applyFiltersPlCreator()">
+        <select id="trainingsziel" onchange="applyFilters('plan_erstellen')">
             <option value="">All</option>
             <?php
             foreach ($trainingsziel as $goal) {
@@ -42,7 +42,7 @@ if ($row = $result->fetch_assoc()) {
         </select>
 
         <label for="Body_part">Zielmuskel</label>
-        <select id="body_part" onchange="applyFiltersPlCreator()">
+        <select id="body_part" onchange="applyFilters('plan_erstellen')">
             <option value="">All</option>
             <?php
             foreach ($body_part as $body) {
@@ -52,7 +52,7 @@ if ($row = $result->fetch_assoc()) {
         </select>
 
         <label for="Level">Level</label>
-        <select id="level" onchange="applyFiltersPlCreator()#">
+        <select id="level" onchange="applyFilters('plan_erstellen')">
             <option value="">All</option>
             <?php
             foreach ($Level as $lev) {
@@ -62,7 +62,7 @@ if ($row = $result->fetch_assoc()) {
         </select>
 
         <label for="Equipment_requierd">Benötigte Ausrüstung</label>
-        <select id="equipment" onchange="applyFiltersPlCreator()">
+        <select id="equipment" onchange="applyFilters('plan_erstellen')">
             <option value="">All</option>
             <?php
             foreach ($equipment as $equipment_req) {
@@ -72,7 +72,7 @@ if ($row = $result->fetch_assoc()) {
         </select>
 
         <label for="is_universal">Universal</label>
-        <select id="is_universal" onchange="applyFiltersPlCreator()">
+        <select id="is_universal" onchange="applyFilters('plan_erstellen')">
             <option value="">All</option>
             <?php
             foreach ($is_universal as $universal) {
@@ -83,7 +83,7 @@ if ($row = $result->fetch_assoc()) {
         </select>
 
         <label for="liked">Favorite</label>
-        <select id="liked" onchange="applyFiltersPlCreator()">
+        <select id="liked" onchange="applyFilters('plan_erstellen')">
             <option value="">All</option>
             <?php
             foreach ($liked as $like) {
@@ -93,8 +93,8 @@ if ($row = $result->fetch_assoc()) {
             ?>
         </select>
 
-        <button type="button" id="resetButton" onclick="resetFiltersPl()">Reset Filters</button>
-        <input type="search" class="module_search" placeholder="Search Exercises:..." oninput="applyFiltersPlCreator()">
+        <button type="button" id="resetButton" onclick="resetFilters('plan_erstellen')">Reset Filters</button>
+        <input type="search" id="plan_erstellen_search" class="module_search" placeholder="Search Exercises:..." oninput="applyFilters('plan_erstellen')">
         <button type="button" id="wk_erstellen_abbrechen" onclick="Pl_abbrechen()">Löschen</button>
         <button type="button" id="Workout_Fertigstellen" onclick="load_einzelseite_pl(<?php echo htmlspecialchars($plan_id); ?>)">Workout Fertigstellen</button>
     </form>

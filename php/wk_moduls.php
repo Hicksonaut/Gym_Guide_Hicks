@@ -61,7 +61,7 @@ if ($result->num_rows > 0) {
 
         $likedClass = $row['liked'] ? 'active' : '';
         $heartIcon = $row["liked"] ? '/svg/heart_filled.svg' : '/svg/heart-svgrepo-com.svg';
-        echo "<div class='like-icon $likedClass ' onclick='toggleLikeWk(this, " . htmlspecialchars($row['workout_id']) . ")'>";
+        echo "<div class='like-icon $likedClass ' onclick='toggleLike(this, " . htmlspecialchars($row['workout_id']) . ",\"workout\")'>";
         echo "<img src='" . $heartIcon . "' alt='Like Icon' class='heart-icon'>";
         echo "</div>";
 

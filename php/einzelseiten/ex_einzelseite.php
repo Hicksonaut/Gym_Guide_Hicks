@@ -86,7 +86,7 @@ if ($result->num_rows > 0) {
 
     $likedClass = $row['liked'] ? 'active' : '';
     $heartIcon = $row['liked'] ? '../../svg/heart_filled.svg' : '../../svg/heart-svgrepo-com.svg';
-    echo "<div class='like-icon-einzelseite' $likedClass onclick='toggleLike(this, ".htmlspecialchars($row['exercise_id']).")'>";
+    echo "<div class='like-icon-einzelseite' $likedClass onclick='toggleLike(this, ".htmlspecialchars($row['exercise_id']).",\"exercise\")'>";
     echo "<img src='". $heartIcon. "' alt='Like Icon' class='heart-icon-einzelseite'>";
     echo "</div>";
 
@@ -97,12 +97,17 @@ if ($result->num_rows > 0) {
     echo "</div>";
     echo "<div class='content_seite'>";
 
-    echo "<img id='img_titel' class='element-bild' src='/img/Exercise_bilder/" . htmlspecialchars($row['bild_ex']) . "'>";
+    if (!empty($row['bild_ex'])) {
+        echo "<img id='img_titel' class='element-bild' src='/img/Exercise_bilder/" . htmlspecialchars($row["bild_ex"]) . "' >";
+    } else {
+        echo "<img id='img_titel' class='element-bild' src='/img/image-not-found.png' '>";
+    }
+
 
     echo "<div class='element-text'>";
     echo "<h3>".htmlspecialchars($row['name'])." Instructions</h3>";
     if (!empty($row['instructions'])) {
-        echo "<p>" . htmlspecialchars($row['instructions']) . "</p>";
+        echo "<p>" . nl2br(htmlspecialchars($row['instructions'])) . "</p>";
     } else {
         echo "<p>nothing</p>";
     }

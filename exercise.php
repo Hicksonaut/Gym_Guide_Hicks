@@ -10,13 +10,12 @@ include 'php/ex_filter.php';
     <meta charset="UTF-8">
     <title>Exercise</title>
     <link rel="stylesheet" href="css/Module.css">
-    <script src="js/exersice.js"></script>
 </head>
 <body>
 <div class="filter-container">
     <form id="filterForm">
         <label for="targetMuscle">Target Muscle:</label>
-        <select id="targetMuscle" onchange="applyFilters()">
+        <select id="targetMuscle" onchange="applyFilters('exercise')">
             <option value="">All</option>
             <?php
             foreach ($target_muscles as $Muscle) {
@@ -26,7 +25,7 @@ include 'php/ex_filter.php';
         </select>
 
         <label for="equipment">Equipment Required:</label>
-        <select id="equipment" onchange="applyFilters()">
+        <select id="equipment" onchange="applyFilters('exercise')">
             <option value="">All</option>
             <?php
             foreach ($equipment_requierd as $equipment) {
@@ -36,7 +35,7 @@ include 'php/ex_filter.php';
         </select>
 
         <label for="mechanics">Mechanics:</label>
-        <select id="mechanics" onchange="applyFilters()">
+        <select id="mechanics" onchange="applyFilters('exercise')">
             <option value="">All</option>
             <?php
             foreach ($mechanics as $mechanic) {
@@ -46,7 +45,7 @@ include 'php/ex_filter.php';
         </select>
 
         <label for="experienceLevel">Experience Level:</label>
-        <select id="experienceLevel" onchange="applyFilters()">
+        <select id="experienceLevel" onchange="applyFilters('exercise')">
             <option value="">All</option>
             <?php
             foreach ($experience_level as $level) {
@@ -56,7 +55,7 @@ include 'php/ex_filter.php';
         </select>
 
         <label for="liked">Favorites</label>
-        <select id="liked" onchange="applyFilters()">
+        <select id="liked" onchange="applyFilters('exercise')">
             <option value="">All</option>
             <?php
             foreach ($liked as $like) {
@@ -66,14 +65,15 @@ include 'php/ex_filter.php';
             ?>
         </select>
 
-        <button type="button" id="resetButton" onclick="resetFilters()">Reset Filters</button>
-        <input type="search" class="module_search" id="exercise_search" placeholder="Search Exercises:..." oninput="applyFilters()">
+        <button type="button" id="resetButton" onclick="resetFilters('exercise')">Reset Filters</button>
+        <input type="search" class="module_search" id="exercise_search" placeholder="Search Exercises:..." oninput="applyFilters('exercise')">
     </form>
 </div>
 
 <?php
 include 'php/ex_moduls.php';
 ?>
+
 
 <?php
 include 'php/Impressum/impressum_link_zeile.php';

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Plan Details</title>
     <link rel="stylesheet" href="../../css/einzelseite.css">
-    <script src="../../js/plan.js"></script>
 </head>
 <body>
 
@@ -84,7 +83,7 @@ if ($result->num_rows > 0) {
 
     $likedClass = $row['liked'] ? 'active' : '';
     $heartIcon = $row['liked'] ? '../../svg/heart_filled.svg' : '../../svg/heart-svgrepo-com.svg';
-    echo "<div class='like-icon-einzelseite $likedClass' onclick='toggleLikePl(this, " . htmlspecialchars($row['plan_id']) . ")'>";
+    echo "<div class='like-icon-einzelseite $likedClass' onclick='toggleLikePl(this, " . htmlspecialchars($row['plan_id']) . ",\"exercise\")'>";
     echo "<img src='" . $heartIcon . "' alt='Like Icon' class='heart-icon-einzelseite'>";
     echo "</div>"; #ende like-icon
 
@@ -101,7 +100,7 @@ if ($result->num_rows > 0) {
 
     echo "<img id='img_titel' class='element-bild' src='/img/Plan_bilder/" . htmlspecialchars($row['Bild']) . "'>";
     if (!empty($row['description'])) {
-        echo "<p class='element-text'>" . htmlspecialchars($row['description']) . "</p>";
+        echo "<p class='element-text'>" . nl2br(htmlspecialchars($row['description'])) . "</p>";
     } else {
         echo "<p class='element-text'>There is no description available for this Plan. If this is your own Plan you can create one, in the Editing Menu.</p>";
     }
@@ -150,6 +149,7 @@ if ($result->num_rows > 0) {
 
     $sql_workouts = "
         SELECT 
+            Wk.workout_id AS wk_id,
             Wk.workout_name AS workout_name, 
             mu.muscle_name AS muscle_name,
             eq.equipment_name AS equipment_name,
@@ -187,6 +187,7 @@ if ($result->num_rows > 0) {
               </tr>";
         while ($workout = $result_workouts->fetch_assoc()) {
             echo "<tr>";
+            echo "<tr onclick='load_einzelseite_wk(" . htmlspecialchars($workout['wk_id']) . ")'>";
             echo "<td>" . htmlspecialchars($workout['workout_name']) . "</td>";
             echo "<td>" . htmlspecialchars($workout['muscle_name']) . "</td>";
             echo "<td>" . htmlspecialchars($workout['equipment_name']) . "</td>";

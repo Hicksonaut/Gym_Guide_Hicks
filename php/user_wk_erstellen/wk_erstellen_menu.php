@@ -33,7 +33,7 @@ if ($row = $result->fetch_assoc()) {
 <div class="filter-container">
     <form id="filterForm">
         <label for="targetMuscle">Target Muscle:</label>
-        <select id="targetMuscle" onchange="applyFiltersWkCreator()">
+        <select id="targetMuscle" onchange="applyFilters('workout_erstellen')">
             <option value="">All</option>
             <?php
             foreach ($target_muscles as $Muscle) {
@@ -43,7 +43,7 @@ if ($row = $result->fetch_assoc()) {
         </select>
 
         <label for="equipment">Equipment Required:</label>
-        <select id="equipment" onchange="applyFiltersWkCreator()">
+        <select id="equipment" onchange="applyFilters('workout_erstellen')">
             <option value="">All</option>
             <?php
             foreach ($equipment_requierd as $equipment) {
@@ -53,7 +53,7 @@ if ($row = $result->fetch_assoc()) {
         </select>
 
         <label for="mechanics">Mechanics:</label>
-        <select id="mechanics" onchange="applyFiltersWkCreator()">
+        <select id="mechanics" onchange="applyFilters('workout_erstellen')">
             <option value="">All</option>
             <?php
             foreach ($mechanics as $mechanic) {
@@ -63,7 +63,7 @@ if ($row = $result->fetch_assoc()) {
         </select>
 
         <label for="experienceLevel">Experience Level:</label>
-        <select id="experienceLevel" onchange="applyFiltersWkCreator()">
+        <select id="experienceLevel" onchange="applyFilters('workout_erstellen')">
             <option value="">All</option>
             <?php
             foreach ($experience_level as $level) {
@@ -73,7 +73,7 @@ if ($row = $result->fetch_assoc()) {
         </select>
 
         <label for="added">Hinzugefügt:</label>
-        <select id="added" onchange="applyFiltersWkCreator()">
+        <select id="added" onchange="applyFilters('workout_erstellen')">
             <option value="">All</option>
             <?php
             foreach ($aditional as $added) {
@@ -83,8 +83,8 @@ if ($row = $result->fetch_assoc()) {
             ?>
         </select>
 
-        <button type="button" id="resetButton" onclick="resetFilters()">Reset Filters</button>
-        <input type="search" class="module_search" placeholder="Search Exercises:..." oninput="applyFiltersWkCreator()">
+        <button type="button" id="resetButton" onclick="resetFilters('workout_erstellen')">Reset Filters</button>
+        <input type="search" class="module_search" id="workout_erstellen_search" placeholder="Search Exercises:..." oninput="applyFilters('workout_erstellen')">
         <button type="button" id="wk_erstellen_abbrechen" onclick="WK_abbrechen()">Löschen</button>
         <button type="button" id="Workout_Fertigstellen" onclick="load_einzelseite_wk(<?php echo htmlspecialchars($workout_id); ?>)">Workout Fertigstellen</button>
     </form>

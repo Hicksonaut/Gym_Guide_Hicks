@@ -3,6 +3,7 @@
     width: 24px;
     margin-left: 2%;
     margin-right: 2%;
+    cursor: pointer;
 }
 
 body {
@@ -140,6 +141,8 @@ p {
 /* ab hier das css für das ..._erstellen_user.php
  */
 
-
+.element-table tr {
+    cursor: pointer;
+}
 
 

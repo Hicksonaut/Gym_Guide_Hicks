@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Workout Details Workout</title>
     <link rel="stylesheet" href="../../css/einzelseite.css">
-    <script src="../../js/workout.js"></script>
 </head>
 <body>
 
@@ -83,7 +82,7 @@ if ($result->num_rows > 0) {
 
     $likedClass = $row['liked'] ? 'active' : '';
     $heartIcon = $row['liked'] ? '../../svg/heart_filled.svg' : '../../svg/heart-svgrepo-com.svg';
-    echo "<div class='like-icon-einzelseite $likedClass' onclick='toggleLikeWk(this, " . htmlspecialchars($row['workout_id']) . ")'>";
+    echo "<div class='like-icon-einzelseite $likedClass' onclick='toggleLikeWk(this, " . htmlspecialchars($row['workout_id']) . ",\"exercise\")'>";
     echo "<img src='" . $heartIcon . "' alt='Like Icon' class='heart-icon-einzelseite'>";
     echo "</div>"; #ende like-icon
 
@@ -100,7 +99,7 @@ if ($result->num_rows > 0) {
 
     echo "<img id='img_titel' class='element-bild' src='/img/workout_bilder/" . htmlspecialchars($row['wk_bild']) . "'>";
     if (!empty($row['description'])) {
-        echo "<p class='element-text'>" . htmlspecialchars($row['description']) . "</p>";
+        echo "<p class='element-text'>" . nl2br(htmlspecialchars($row['description'])) . "</p>";
     } else {
         echo "<p class='element-text'>There is no description available for this workout.</p>";
     }
@@ -143,6 +142,7 @@ if ($result->num_rows > 0) {
 
     $sql_exercises = "
         SELECT 
+            ex.ex_id AS ex_id,
             ex.name AS exercise_name, 
             mu.muscle_name AS target_muscle,
             eq.equipment_name AS equipment_name,
@@ -180,6 +180,7 @@ if ($result->num_rows > 0) {
               </tr>";
         while ($exercise = $result_exercises->fetch_assoc()) {
             echo "<tr>";
+            echo "<tr onclick='load_einzelseite_ex(" . htmlspecialchars($exercise['ex_id']) . ")'>";
             echo "<td>" . htmlspecialchars($exercise['exercise_name']) . "</td>";
             echo "<td>" . htmlspecialchars($exercise['target_muscle']) . "</td>";
             echo "<td>" . htmlspecialchars($exercise['equipment_name']) . "</td>";

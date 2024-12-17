@@ -10,14 +10,13 @@ include 'php/wk_filter.php';
 <head>
     <meta charset="UTF-8">
     <title>Workouts</title>
-    <link href="js/workout.js">
     <link rel="stylesheet" href="css/Module.css">
 </head>
 <body>
 <div class="filter-container">
     <form id="filterform">
         <label for="Trainingsziel">Trainingsziel</label>
-        <select id="trainingsziel" onchange="applyFiltersWk()">
+        <select id="trainingsziel" onchange="applyFilters('workout')">
             <option value="">All</option>
             <?php
             foreach ($trainingsziel as $goal) {
@@ -27,7 +26,7 @@ include 'php/wk_filter.php';
         </select>
 
         <label for="Body_part">Zielmuskel</label>
-        <select id="body_part" onchange="applyFiltersWk()">
+        <select id="body_part" onchange="applyFilters('workout')">
             <option value="">All</option>
             <?php
             foreach ($body_part as $body) {
@@ -37,7 +36,7 @@ include 'php/wk_filter.php';
         </select>
 
         <label for="Level">Level</label>
-        <select id="level" onchange="applyFiltersWk()">
+        <select id="level" onchange="applyFilters('workout')">
             <option value="">All</option>
             <?php
             foreach ($Level as $lev) {
@@ -47,7 +46,7 @@ include 'php/wk_filter.php';
         </select>
 
         <label for="Equipment_requierd">Benötigte Ausrüstung</label>
-        <select id="equipment" onchange="applyFiltersWk()">
+        <select id="equipment" onchange="applyFilters('workout')">
             <option value="">All</option>
             <?php
             foreach ($equipment as $equipment_req) {
@@ -57,7 +56,7 @@ include 'php/wk_filter.php';
         </select>
 
         <label for="is_universal">Universal</label>
-        <select id="is_universal" onchange="applyFiltersWk()">
+        <select id="is_universal" onchange="applyFilters('workout')">
             <option value="">All</option>
             <?php
             foreach ($is_universal as $universal) {
@@ -68,7 +67,7 @@ include 'php/wk_filter.php';
         </select>
 
         <label for="liked">Favorite</label>
-        <select id="liked" onchange="applyFiltersWk()">
+        <select id="liked" onchange="applyFilters('workout')">
             <option value="">All</option>
             <?php
             foreach ($liked as $like) {
@@ -78,7 +77,7 @@ include 'php/wk_filter.php';
             ?>
         </select>
 
-        <button type="button" id="resetButtonWk" onclick="resetFiltersWk()">Reset</button>
+        <button type="button" id="resetButtonWk" onclick="resetFilters('workout')">Reset</button>
         <button type="button" id="Wk_erstellen" onclick="load_user_erstellt_workout()">Add New</button>
     </form>
 </div>

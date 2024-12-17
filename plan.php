@@ -9,14 +9,13 @@ include 'php/pl_filter.php';
 <head>
     <meta charset="UTF-8">
     <title>Workouts</title>
-    <link href="js/plan.js">
     <link rel="stylesheet" href="css/Module.css">
 </head>
 <body>
 <div class="filter-container">
     <form id="filterform">
         <label for="Trainingsziel">Trainingsziel</label>
-        <select id="trainingsziel" onchange="applyFiltersPl()">
+        <select id="trainingsziel" onchange="applyFilters('plan')">
             <option value="">All</option>
             <?php
             foreach ($ziel_pl as $goal) {
@@ -26,7 +25,7 @@ include 'php/pl_filter.php';
         </select>
 
         <label for="Body_part">Zielmuskel</label>
-        <select id="body_part" onchange="applyFiltersPl()">
+        <select id="body_part" onchange="applyFilters('plan')">
             <option value="">All</option>
             <?php
             foreach ($muscle_pl as $body) {
@@ -36,7 +35,7 @@ include 'php/pl_filter.php';
         </select>
 
         <label for="Level">Level</label>
-        <select id="level" onchange="applyFiltersPl()">
+        <select id="level" onchange="applyFilters('plan')">
             <option value="">All</option>
             <?php
             foreach ($level_pl as $lev) {
@@ -46,7 +45,7 @@ include 'php/pl_filter.php';
         </select>
 
         <label for="Equipment_requierd">Benötigte Ausrüstung</label>
-        <select id="equipment" onchange="applyFiltersPl()">
+        <select id="equipment" onchange="applyFilters('plan')">
             <option value="">All</option>
             <?php
             foreach ($equipment_pl as $equipment_req) {
@@ -56,7 +55,7 @@ include 'php/pl_filter.php';
         </select>
 
         <label for="is_universal">Universal</label>
-        <select id="is_universal" onchange="applyFiltersPl()">
+        <select id="is_universal" onchange="applyFilters('plan')">
             <option value="">All</option>
             <?php
             foreach ($is_universal_pl as $universal) {
@@ -67,7 +66,7 @@ include 'php/pl_filter.php';
         </select>
 
         <label for="trainingstage">Tage</label>
-        <select id="trainingstage" onchange="applyFiltersPl()">
+        <select id="trainingstage" onchange="applyFilters('plan')">
             <option value="">All</option>
             <?php
             foreach ($trainingstage_pl as $tage) {
@@ -77,7 +76,7 @@ include 'php/pl_filter.php';
         </select>
 
         <label for="liked">Favorite</label>
-        <select id="liked" onchange="applyFiltersPl()">
+        <select id="liked" onchange="applyFilters('plan')">
             <option value="">All</option>
             <?php
             foreach ($liked_pl as $like) {
@@ -87,7 +86,7 @@ include 'php/pl_filter.php';
             ?>
         </select>
 
-        <button type="button" id="resetButton" onclick="resetFiltersPl()">Reset</button>
+        <button type="button" id="resetButton" onclick="resetFilters('plan')">Reset</button>
         <button type="button" id="PL_erstellen" onclick="load_user_erstellt_plan()">Add New</button>
     </form>
 </div>
