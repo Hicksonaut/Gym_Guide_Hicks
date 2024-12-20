@@ -16,12 +16,12 @@ if (isset($_SESSION['user_id'])) {
 $sql = "
     SELECT
         UWP.plan_id,
-        Wp.name,
-        Wp.Bild
+        WP.name,
+        WP.Bild
     FROM
-        UserWorkoutPlan AS UWP
+        userworkoutplan AS UWP
     LEFT JOIN 
-        WorkoutPlan Wp ON UWP.plan_id = WP.plan_id
+        workoutplan WP ON UWP.plan_id = WP.plan_id
     WHERE 
         user_id = ?
 ";
@@ -51,7 +51,7 @@ echo "<div class='dashboard'>
         } else {
             echo "<div class='card-item-center' onclick='load_pl_choose_filter_and_module()'>";
             echo "<img class='card-svg' src='../../svg/plus.svg' alt='check'>";
-            echo "<p>Bitte Wähle ein Workout aus.</p>";
+            echo "<p>Bitte Wähle ein Plan aus.</p>";
             echo "</div>";
         }
 
@@ -67,6 +67,5 @@ echo"       </div>
                 <p>test</p>
             </div>
         </div>
-    
+    </div>
 </div>";
-

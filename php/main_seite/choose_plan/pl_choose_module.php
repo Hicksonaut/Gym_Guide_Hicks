@@ -32,8 +32,8 @@ $sql = "
         Pl.is_universal,
         EXISTS(
             SELECT 1
-            FROM UserWorkoutPlan UWP
-            WHERE UWP.plan_id =  PL.plan_id
+            FROM userworkoutplan UWP
+            WHERE UWP.plan_id =  Pl.plan_id
             AND UWP.user_id = ?
         ) AS ChoosenPlan
     FROM

@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $plan_id = $_POST['plan_id'];
 
     // Prüfen, ob der Benutzer den Plan bereits ausgewählt hat
-    $check_sql = "SELECT * FROM UserWorkoutPlan WHERE user_id = ? AND plan_id = ?";
+    $check_sql = "SELECT * FROM userworkoutplan WHERE user_id = ? AND plan_id = ?";
     $check_stmt = $conn->prepare($check_sql);
     $check_stmt->bind_param("ii", $user_id, $plan_id);
     $check_stmt->execute();
@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($check_result->num_rows > 0) {
         // Plan bereits ausgewählt, daher löschen (Deselektion)
-        $delete_sql = "DELETE FROM UserWorkoutPlan WHERE user_id = ? AND plan_id = ?";
+        $delete_sql = "DELETE FROM userworkoutplan WHERE user_id = ? AND plan_id = ?";
         $delete_stmt = $conn->prepare($delete_sql);
         $delete_stmt->bind_param("ii", $user_id, $plan_id);
         if ($delete_stmt->execute()) {
@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         // Vorherigen Plan des Benutzers löschen (falls vorhanden)
-        $delete_existing_sql = "DELETE FROM UserWorkoutPlan WHERE user_id = ?";
+        $delete_existing_sql = "DELETE FROM userworkoutplan WHERE user_id = ?";
         $delete_existing_stmt = $conn->prepare($delete_existing_sql);
         $delete_existing_stmt->bind_param("i", $user_id);
         $delete_existing_stmt->execute();
@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $delete_existing_schedule_stmt->execute();
 
         // Neuen Plan hinzufügen
-        $insert_sql = "INSERT INTO UserWorkoutPlan (user_id, plan_id) VALUES (?, ?)";
+        $insert_sql = "INSERT INTO userworkoutplan (user_id, plan_id) VALUES (?, ?)";
         $insert_stmt = $conn->prepare($insert_sql);
         $insert_stmt->bind_param("ii", $user_id, $plan_id);
         if ($insert_stmt->execute()) {

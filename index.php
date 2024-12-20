@@ -162,7 +162,7 @@ $stmt->close();
 
     function loadHome() {
         closeNavbar();
-        loadContent('Home.php');
+        loadContent('home.php');
     }
 
     function load_user_erstellt_workout() {

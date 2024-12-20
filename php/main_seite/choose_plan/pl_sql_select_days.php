@@ -27,11 +27,11 @@ $filter_sql = "SELECT
         W.workout_id AS id,
         W.workout_name AS name
     FROM 
-        UserWorkoutPlan UWP
+        userworkoutplan UWP
     LEFT JOIN 
-        Link_Plan_Workout LPW ON UWP.plan_id = LPW.plan_id
+        link_plan_workout LPW ON UWP.plan_id = LPW.plan_id
     LEFT JOIN
-        Workouts W ON LPW.Workout_id = W.workout_id
+        workouts W ON LPW.Workout_id = W.workout_id
     WHERE
         UWP.plan_id = ?
 ";
