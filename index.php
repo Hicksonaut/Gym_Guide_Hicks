@@ -27,6 +27,7 @@ $stmt->close();
     <link rel="icon" href="img/Logo.png">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/Module.css">
+    <link rel="stylesheet" href="css/main_site_block.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
@@ -208,6 +209,13 @@ $stmt->close();
         loadContent(`php/einzelseiten/pl_bearbeiten_user.php?plan_id=${planID}`);
     }
 
+    function load_pl_choose_filter_and_module() {
+        loadContent('php/main_seite/choose_plan/pl_choose_filter_and_module.php')
+    }
+
+    function load_pl_choose_days() {
+        loadContent('php/main_seite/choose_plan/pl_choose_days.php')
+    }
 
 
     function loadContent(url) {
@@ -306,20 +314,31 @@ $stmt->close();
                     .catch(error => {
                         console.error('Fehler beim Aktualisieren des Plans:', error);
                     });
+            } else if (e.target && e.target.id === 'choose_days_workout') {
+                let formData = new FormData(e.target);
+                fetch(`php/main_seite/choose_plan/pl_choose_days.php`, {
+                    method: 'POST',
+                    body: formData,
+                })
+                    .then(response => response.text())
+                    .then(data => {
+                        console.log(data);
+                        loadHome();
+                    })
+                    .catch(error => {
+                        console.error('Fehler beim Aktualisieren des Plans:', error);
+                    });
             }
         });
     });
 
     document.addEventListener("DOMContentLoaded", attachScrollToTopListener);
 
-
-
 </script>
 <script src="js/wk_creator.js"></script>
 <script src="js/pl_creator.js"></script>
 <script src="js/modules.js"></script>
-
-
+<script src="js/choose_plan.js"></script>
 
 </body>
 </html>

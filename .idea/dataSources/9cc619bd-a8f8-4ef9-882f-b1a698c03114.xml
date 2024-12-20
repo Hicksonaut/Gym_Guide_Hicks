@@ -994,40 +994,40 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <collation id="287" parent="1" name="utf8mb4_mn_cyrl_0900_as_cs">
       <Charset>utf8mb4</Charset>
     </collation>
-    <schema id="288" parent="1" name="mysql">
+    <schema id="288" parent="1" name="Gym_Tracker">
+      <LastIntrospectionLocalTimestamp>2024-12-20.14:28:33</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="289" parent="1" name="information_schema">
-      <CollationName>utf8mb3_general_ci</CollationName>
-    </schema>
-    <schema id="290" parent="1" name="performance_schema">
+    <schema id="289" parent="1" name="beziehungen_zwischen_tabellen">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="291" parent="1" name="sys">
+    <schema id="290" parent="1" name="books">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="292" parent="1" name="deutsch">
+    <schema id="291" parent="1" name="deutsch">
       <CollationName>utf8mb4_german2_ci</CollationName>
     </schema>
-    <schema id="293" parent="1" name="test">
-      <CollationName>utf8mb4_german2_ci</CollationName>
-    </schema>
-    <schema id="294" parent="1" name="personen">
-      <CollationName>utf8mb4_german2_ci</CollationName>
-    </schema>
-    <schema id="295" parent="1" name="beziehungen_zwischen_tabellen">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="296" parent="1" name="books">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="297" parent="1" name="Gym_Tracker">
-      <LastIntrospectionLocalTimestamp>2024-11-26.11:29:32</LastIntrospectionLocalTimestamp>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="298" parent="1" name="diagramtest">
+    <schema id="292" parent="1" name="diagramtest">
       <LastIntrospectionLocalTimestamp>2024-10-09.21:21:05</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="293" parent="1" name="information_schema">
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </schema>
+    <schema id="294" parent="1" name="mysql">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="295" parent="1" name="performance_schema">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="296" parent="1" name="personen">
+      <CollationName>utf8mb4_german2_ci</CollationName>
+    </schema>
+    <schema id="297" parent="1" name="sys">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="298" parent="1" name="test">
+      <CollationName>utf8mb4_german2_ci</CollationName>
     </schema>
     <user id="299" parent="1" name="mysql.infoschema">
       <CanLogin>0</CanLogin>
@@ -1048,939 +1048,993 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="303" parent="297" name="Exercises">
+    <table id="303" parent="288" name="Exercises">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="304" parent="297" name="Levels">
+    <table id="304" parent="288" name="Levels">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="305" parent="297" name="Link_Plan_Workout">
+    <table id="305" parent="288" name="Link_Plan_Workout">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="306" parent="297" name="Mechanics">
+    <table id="306" parent="288" name="Mechanics">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="307" parent="297" name="Muscle">
+    <table id="307" parent="288" name="Muscle">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="308" parent="297" name="UserExerciseLog">
+    <table id="308" parent="288" name="UserExerciseLog">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="309" parent="297" name="UserFavorites">
+    <table id="309" parent="288" name="UserFavorites">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="310" parent="297" name="UserWorkoutPlan">
+    <table id="310" parent="288" name="UserWorkoutPlan">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="311" parent="297" name="Users">
+    <table id="311" parent="288" name="Users">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="312" parent="297" name="WorkoutPlan">
+    <table id="312" parent="288" name="WorkoutPlan">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="313" parent="297" name="Workouts">
+    <table id="313" parent="288" name="Workouts">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="314" parent="297" name="equipment">
+    <table id="314" parent="288" name="equipment">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="315" parent="297" name="exercise_details">
+    <table id="315" parent="288" name="exercise_details">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="316" parent="297" name="force_type">
+    <table id="316" parent="288" name="force_type">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="317" parent="297" name="link_workout_exercise">
+    <table id="317" parent="288" name="link_workout_exercise">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="318" parent="297" name="trainingsziel">
+    <table id="318" parent="288" name="trainingsziel">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="319" parent="298" name="a">
+    <table id="319" parent="288" name="user_workout_schedule">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="320" parent="298" name="b">
+    <table id="320" parent="292" name="a">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="321" parent="303" name="ex_id">
-      <AutoIncrement>32</AutoIncrement>
+    <table id="321" parent="292" name="b">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="322" parent="303" name="ex_id">
+      <AutoIncrement>771</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="322" parent="303" name="name">
+    <column id="323" parent="303" name="name">
       <Position>2</Position>
       <StoredType>text|0s</StoredType>
     </column>
-    <column id="323" parent="303" name="Instructions">
+    <column id="324" parent="303" name="Instructions">
       <Position>3</Position>
       <StoredType>longtext|0s</StoredType>
     </column>
-    <column id="324" parent="303" name="Tips">
+    <column id="325" parent="303" name="Tips">
       <Position>4</Position>
       <StoredType>longtext|0s</StoredType>
     </column>
-    <column id="325" parent="303" name="bild_ex">
+    <column id="326" parent="303" name="bild_ex">
       <Position>5</Position>
       <StoredType>tinytext|0s</StoredType>
     </column>
-    <column id="326" parent="303" name="bild_muscle">
+    <column id="327" parent="303" name="bild_muscle">
       <Position>6</Position>
       <StoredType>longblob|0s</StoredType>
     </column>
-    <column id="327" parent="303" name="target_muscle">
+    <column id="328" parent="303" name="target_muscle">
       <Position>7</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="328" parent="303" name="exercise_type">
+    <column id="329" parent="303" name="exercise_type">
       <Position>8</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="329" parent="303" name="equipment_requierd">
+    <column id="330" parent="303" name="equipment_requierd">
       <Position>9</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="330" parent="303" name="Mechanics">
+    <column id="331" parent="303" name="Mechanics">
       <Position>10</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="331" parent="303" name="force_type">
+    <column id="332" parent="303" name="force_type">
       <Position>11</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="332" parent="303" name="experience_level">
+    <column id="333" parent="303" name="experience_level">
       <Position>12</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <foreign-key id="333" parent="303" name="ex_muscle_fk">
+    <foreign-key id="334" parent="303" name="ex_muscle_fk">
       <ColNames>target_muscle</ColNames>
       <RefColNames>muscle_id</RefColNames>
       <RefTableName>Muscle</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <foreign-key id="334" parent="303" name="ex_ziel_fk">
+    <foreign-key id="335" parent="303" name="ex_ziel_fk">
       <ColNames>exercise_type</ColNames>
       <RefColNames>ziel_id</RefColNames>
       <RefTableName>trainingsziel</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <foreign-key id="335" parent="303" name="ex_equipment_fk">
+    <foreign-key id="336" parent="303" name="ex_equipment_fk">
       <ColNames>equipment_requierd</ColNames>
       <RefColNames>equipment_id</RefColNames>
       <RefTableName>equipment</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <foreign-key id="336" parent="303" name="ex_mechanics_fk">
+    <foreign-key id="337" parent="303" name="ex_mechanics_fk">
       <ColNames>Mechanics</ColNames>
       <RefColNames>mechanics_id</RefColNames>
       <RefTableName>Mechanics</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <foreign-key id="337" parent="303" name="ex_force_fk">
+    <foreign-key id="338" parent="303" name="ex_force_fk">
       <ColNames>force_type</ColNames>
       <RefColNames>force_id</RefColNames>
       <RefTableName>force_type</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <foreign-key id="338" parent="303" name="ex_levels_fk">
+    <foreign-key id="339" parent="303" name="ex_levels_fk">
       <ColNames>experience_level</ColNames>
       <RefColNames>level_id</RefColNames>
       <RefTableName>Levels</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <index id="339" parent="303" name="PRIMARY">
+    <index id="340" parent="303" name="PRIMARY">
       <ColNames>ex_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="340" parent="303" name="ex_muscle_fk">
+    <index id="341" parent="303" name="ex_muscle_fk">
       <ColNames>target_muscle</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="341" parent="303" name="ex_ziel_fk">
+    <index id="342" parent="303" name="ex_ziel_fk">
       <ColNames>exercise_type</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="342" parent="303" name="ex_equipment_fk">
+    <index id="343" parent="303" name="ex_equipment_fk">
       <ColNames>equipment_requierd</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="343" parent="303" name="ex_mechanics_fk">
+    <index id="344" parent="303" name="ex_mechanics_fk">
       <ColNames>Mechanics</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="344" parent="303" name="ex_force_fk">
+    <index id="345" parent="303" name="ex_force_fk">
       <ColNames>force_type</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="345" parent="303" name="ex_levels_fk">
+    <index id="346" parent="303" name="ex_levels_fk">
       <ColNames>experience_level</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="346" parent="303" name="PRIMARY">
+    <key id="347" parent="303" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="347" parent="304" name="level_id">
+    <column id="348" parent="304" name="level_id">
       <AutoIncrement>4</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="348" parent="304" name="level_name">
+    <column id="349" parent="304" name="level_name">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>text|0s</StoredType>
     </column>
-    <index id="349" parent="304" name="PRIMARY">
+    <index id="350" parent="304" name="PRIMARY">
       <ColNames>level_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="350" parent="304" name="PRIMARY">
+    <key id="351" parent="304" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="351" parent="305" name="plan_workout_id">
-      <AutoIncrement>1</AutoIncrement>
+    <column id="352" parent="305" name="plan_workout_id">
+      <AutoIncrement>31</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="352" parent="305" name="plan_id">
+    <column id="353" parent="305" name="plan_id">
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="353" parent="305" name="Workout_id">
+    <column id="354" parent="305" name="Workout_id">
       <Position>3</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <foreign-key id="354" parent="305" name="plan_id_fk">
+    <foreign-key id="355" parent="305" name="plan_id_fk">
       <ColNames>plan_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>plan_id</RefColNames>
       <RefTableName>WorkoutPlan</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <foreign-key id="355" parent="305" name="workout_id">
+    <foreign-key id="356" parent="305" name="workout_id">
       <ColNames>Workout_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>workout_id</RefColNames>
       <RefTableName>Workouts</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <index id="356" parent="305" name="PRIMARY">
+    <index id="357" parent="305" name="PRIMARY">
       <ColNames>plan_workout_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="357" parent="305" name="plan_id_fk">
+    <index id="358" parent="305" name="plan_id_fk">
       <ColNames>plan_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="358" parent="305" name="workout_id">
+    <index id="359" parent="305" name="workout_id">
       <ColNames>Workout_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="359" parent="305" name="PRIMARY">
+    <key id="360" parent="305" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="360" parent="306" name="mechanics_id">
+    <column id="361" parent="306" name="mechanics_id">
       <AutoIncrement>3</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="361" parent="306" name="mechanics_name">
+    <column id="362" parent="306" name="mechanics_name">
       <Position>2</Position>
       <StoredType>text|0s</StoredType>
     </column>
-    <index id="362" parent="306" name="PRIMARY">
+    <index id="363" parent="306" name="PRIMARY">
       <ColNames>mechanics_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="363" parent="306" name="PRIMARY">
+    <key id="364" parent="306" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="364" parent="307" name="muscle_id">
-      <AutoIncrement>9</AutoIncrement>
+    <column id="365" parent="307" name="muscle_id">
+      <AutoIncrement>20</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="365" parent="307" name="muscle_name">
+    <column id="366" parent="307" name="muscle_name">
       <Position>2</Position>
       <StoredType>text|0s</StoredType>
     </column>
-    <index id="366" parent="307" name="PRIMARY">
+    <index id="367" parent="307" name="PRIMARY">
       <ColNames>muscle_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="367" parent="307" name="PRIMARY">
+    <key id="368" parent="307" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="368" parent="308" name="log_id">
+    <column id="369" parent="308" name="log_id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="369" parent="308" name="user_id">
+    <column id="370" parent="308" name="user_id">
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="370" parent="308" name="workout_id">
+    <column id="371" parent="308" name="workout_id">
       <Position>3</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="371" parent="308" name="exercise_id">
+    <column id="372" parent="308" name="exercise_id">
       <Position>4</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="372" parent="308" name="date">
+    <column id="373" parent="308" name="date">
       <Position>5</Position>
       <StoredType>date|0s</StoredType>
     </column>
-    <column id="373" parent="308" name="repetitions">
+    <column id="374" parent="308" name="repetitions">
       <Position>6</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="374" parent="308" name="weight">
+    <column id="375" parent="308" name="weight">
       <Position>7</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <foreign-key id="375" parent="308" name="user_id_fk_3">
+    <foreign-key id="376" parent="308" name="user_id_fk_3">
       <ColNames>user_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>Users</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <foreign-key id="376" parent="308" name="workout_id_fk_2">
+    <foreign-key id="377" parent="308" name="workout_id_fk_2">
       <ColNames>workout_id</ColNames>
       <RefColNames>workout_id</RefColNames>
       <RefTableName>Workouts</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <foreign-key id="377" parent="308" name="exercise_id_fk_2">
+    <foreign-key id="378" parent="308" name="exercise_id_fk_2">
       <ColNames>exercise_id</ColNames>
       <RefColNames>ex_id</RefColNames>
       <RefTableName>Exercises</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <index id="378" parent="308" name="PRIMARY">
+    <index id="379" parent="308" name="PRIMARY">
       <ColNames>log_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="379" parent="308" name="user_id_fk_3">
+    <index id="380" parent="308" name="user_id_fk_3">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="380" parent="308" name="workout_id_fk_2">
+    <index id="381" parent="308" name="workout_id_fk_2">
       <ColNames>workout_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="381" parent="308" name="exercise_id_fk_2">
+    <index id="382" parent="308" name="exercise_id_fk_2">
       <ColNames>exercise_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="382" parent="308" name="PRIMARY">
+    <key id="383" parent="308" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="383" parent="309" name="favorite_id">
-      <AutoIncrement>25</AutoIncrement>
+    <column id="384" parent="309" name="favorite_id">
+      <AutoIncrement>37</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="384" parent="309" name="user_id">
+    <column id="385" parent="309" name="user_id">
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="385" parent="309" name="exercise_id">
+    <column id="386" parent="309" name="exercise_id">
       <Position>3</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="386" parent="309" name="workout_id">
+    <column id="387" parent="309" name="workout_id">
       <Position>4</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="387" parent="309" name="plan_id_fk">
+    <column id="388" parent="309" name="plan_id_fk">
       <Position>5</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="388" parent="309" name="liked">
+    <column id="389" parent="309" name="liked">
       <Position>6</Position>
       <StoredType>tinyint|0s</StoredType>
     </column>
-    <foreign-key id="389" parent="309" name="user_id_fk">
+    <foreign-key id="390" parent="309" name="user_id_fk">
       <ColNames>user_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>Users</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <foreign-key id="390" parent="309" name="exercise_id_fk">
+    <foreign-key id="391" parent="309" name="exercise_id_fk">
       <ColNames>exercise_id</ColNames>
+      <OnDelete>cascade</OnDelete>
       <RefColNames>ex_id</RefColNames>
       <RefTableName>Exercises</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <foreign-key id="391" parent="309" name="workout_id_fk">
+    <foreign-key id="392" parent="309" name="workout_id_fk">
       <ColNames>workout_id</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>workout_id</RefColNames>
       <RefTableName>Workouts</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <foreign-key id="392" parent="309" name="Plan_id_fk_">
+    <foreign-key id="393" parent="309" name="Plan_id_fk_">
       <ColNames>plan_id_fk</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>plan_id</RefColNames>
       <RefTableName>WorkoutPlan</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <index id="393" parent="309" name="PRIMARY">
+    <index id="394" parent="309" name="PRIMARY">
       <ColNames>favorite_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="394" parent="309" name="user_id_fk">
+    <index id="395" parent="309" name="user_id_fk">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="395" parent="309" name="exercise_id_fk">
+    <index id="396" parent="309" name="exercise_id_fk">
       <ColNames>exercise_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="396" parent="309" name="workout_id_fk">
+    <index id="397" parent="309" name="workout_id_fk">
       <ColNames>workout_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="397" parent="309" name="Plan_id_fk_">
+    <index id="398" parent="309" name="Plan_id_fk_">
       <ColNames>plan_id_fk</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="398" parent="309" name="PRIMARY">
+    <key id="399" parent="309" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="399" parent="310" name="user_plan_id">
-      <AutoIncrement>1</AutoIncrement>
+    <column id="400" parent="310" name="user_plan_id">
+      <AutoIncrement>11</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="400" parent="310" name="user_id">
+    <column id="401" parent="310" name="user_id">
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="401" parent="310" name="plan_id">
+    <column id="402" parent="310" name="plan_id">
       <Position>3</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <foreign-key id="402" parent="310" name="user_id_fk_2">
+    <foreign-key id="403" parent="310" name="user_id_fk_2">
       <ColNames>user_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>Users</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <foreign-key id="403" parent="310" name="plan_id_fk_2">
+    <foreign-key id="404" parent="310" name="plan_id_fk_2">
       <ColNames>plan_id</ColNames>
       <RefColNames>plan_id</RefColNames>
       <RefTableName>WorkoutPlan</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <index id="404" parent="310" name="PRIMARY">
+    <index id="405" parent="310" name="PRIMARY">
       <ColNames>user_plan_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="405" parent="310" name="user_id_fk_2">
+    <index id="406" parent="310" name="user_id_fk_2">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="406" parent="310" name="plan_id_fk_2">
+    <index id="407" parent="310" name="plan_id_fk_2">
       <ColNames>plan_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="407" parent="310" name="PRIMARY">
+    <key id="408" parent="310" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="408" parent="311" name="email">
+    <column id="409" parent="311" name="email">
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>varchar(200)|0s</StoredType>
     </column>
-    <column id="409" parent="311" name="password">
+    <column id="410" parent="311" name="password">
       <Position>2</Position>
       <StoredType>text|0s</StoredType>
     </column>
-    <column id="410" parent="311" name="username">
+    <column id="411" parent="311" name="username">
       <Position>3</Position>
       <StoredType>varchar(50)|0s</StoredType>
     </column>
-    <column id="411" parent="311" name="height">
+    <column id="412" parent="311" name="height">
       <Position>4</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="412" parent="311" name="weight">
+    <column id="413" parent="311" name="weight">
       <Position>5</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="413" parent="311" name="age">
+    <column id="414" parent="311" name="age">
       <Position>6</Position>
       <StoredType>tinyint unsigned|0s</StoredType>
     </column>
-    <column id="414" parent="311" name="id">
-      <AutoIncrement>29</AutoIncrement>
+    <column id="415" parent="311" name="id">
+      <AutoIncrement>30</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>7</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="415" parent="311" name="weight_aim">
+    <column id="416" parent="311" name="weight_aim">
       <Position>8</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <index id="416" parent="311" name="Users_pk">
+    <index id="417" parent="311" name="Users_pk">
       <ColNames>email</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="417" parent="311" name="Users_pk_2">
+    <index id="418" parent="311" name="Users_pk_2">
       <ColNames>username</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="418" parent="311" name="PRIMARY">
+    <index id="419" parent="311" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="419" parent="311" name="PRIMARY">
+    <key id="420" parent="311" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="420" parent="311" name="Users_pk">
+    <key id="421" parent="311" name="Users_pk">
       <UnderlyingIndexName>Users_pk</UnderlyingIndexName>
     </key>
-    <key id="421" parent="311" name="Users_pk_2">
+    <key id="422" parent="311" name="Users_pk_2">
       <UnderlyingIndexName>Users_pk_2</UnderlyingIndexName>
     </key>
-    <column id="422" parent="312" name="plan_id">
-      <AutoIncrement>1</AutoIncrement>
+    <column id="423" parent="312" name="plan_id">
+      <AutoIncrement>11</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="423" parent="312" name="name">
+    <column id="424" parent="312" name="name">
       <Position>2</Position>
       <StoredType>tinytext|0s</StoredType>
     </column>
-    <column id="424" parent="312" name="is_universal">
+    <column id="425" parent="312" name="is_universal">
       <Position>3</Position>
       <StoredType>tinyint(1)|0s</StoredType>
     </column>
-    <column id="425" parent="312" name="creator_user_id">
+    <column id="426" parent="312" name="creator_user_id">
       <Position>4</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="426" parent="312" name="ziel">
+    <column id="427" parent="312" name="ziel">
       <Position>5</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="427" parent="312" name="body_part">
+    <column id="428" parent="312" name="body_part">
       <Position>6</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="428" parent="312" name="Level">
+    <column id="429" parent="312" name="Level">
       <Position>7</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="429" parent="312" name="equipment">
+    <column id="430" parent="312" name="equipment">
       <Position>8</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="430" parent="312" name="trainingstage">
+    <column id="431" parent="312" name="trainingstage">
       <Position>9</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="431" parent="312" name="Bild">
+    <column id="432" parent="312" name="Bild">
       <Position>10</Position>
       <StoredType>text|0s</StoredType>
     </column>
-    <column id="432" parent="312" name="description">
+    <column id="433" parent="312" name="description">
       <Position>11</Position>
       <StoredType>text|0s</StoredType>
     </column>
-    <foreign-key id="433" parent="312" name="creator_user_id_fk">
+    <foreign-key id="434" parent="312" name="creator_user_id_fk">
       <ColNames>creator_user_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>Users</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <foreign-key id="434" parent="312" name="FK_ziel_plan">
+    <foreign-key id="435" parent="312" name="FK_ziel_plan">
       <ColNames>ziel</ColNames>
       <RefColNames>ziel_id</RefColNames>
       <RefTableName>trainingsziel</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <foreign-key id="435" parent="312" name="FK_body_part_plan">
+    <foreign-key id="436" parent="312" name="FK_body_part_plan">
       <ColNames>body_part</ColNames>
       <RefColNames>muscle_id</RefColNames>
       <RefTableName>Muscle</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <foreign-key id="436" parent="312" name="FK_Level_plan">
+    <foreign-key id="437" parent="312" name="FK_Level_plan">
       <ColNames>Level</ColNames>
       <RefColNames>level_id</RefColNames>
       <RefTableName>Levels</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <foreign-key id="437" parent="312" name="FK_equipment_plan">
+    <foreign-key id="438" parent="312" name="FK_equipment_plan">
       <ColNames>equipment</ColNames>
       <RefColNames>equipment_id</RefColNames>
       <RefTableName>equipment</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <index id="438" parent="312" name="PRIMARY">
+    <index id="439" parent="312" name="PRIMARY">
       <ColNames>plan_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="439" parent="312" name="creator_user_id_fk">
+    <index id="440" parent="312" name="creator_user_id_fk">
       <ColNames>creator_user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="440" parent="312" name="FK_ziel_plan">
+    <index id="441" parent="312" name="FK_ziel_plan">
       <ColNames>ziel</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="441" parent="312" name="FK_body_part_plan">
+    <index id="442" parent="312" name="FK_body_part_plan">
       <ColNames>body_part</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="442" parent="312" name="FK_Level_plan">
+    <index id="443" parent="312" name="FK_Level_plan">
       <ColNames>Level</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="443" parent="312" name="FK_equipment_plan">
+    <index id="444" parent="312" name="FK_equipment_plan">
       <ColNames>equipment</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="444" parent="312" name="PRIMARY">
+    <key id="445" parent="312" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="445" parent="313" name="workout_id">
-      <AutoIncrement>85</AutoIncrement>
+    <column id="446" parent="313" name="workout_id">
+      <AutoIncrement>100</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="446" parent="313" name="workout_name">
+    <column id="447" parent="313" name="workout_name">
       <Position>2</Position>
       <StoredType>text|0s</StoredType>
     </column>
-    <column id="447" parent="313" name="is_universal">
+    <column id="448" parent="313" name="is_universal">
       <DefaultExpression>0</DefaultExpression>
       <Position>3</Position>
       <StoredType>tinyint(1)|0s</StoredType>
     </column>
-    <column id="448" parent="313" name="creator_user_id">
+    <column id="449" parent="313" name="creator_user_id">
       <Position>4</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="449" parent="313" name="trainingsziel">
+    <column id="450" parent="313" name="trainingsziel">
       <Position>5</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="450" parent="313" name="body_part">
+    <column id="451" parent="313" name="body_part">
       <Position>6</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="451" parent="313" name="Level">
+    <column id="452" parent="313" name="Level">
       <Position>7</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="452" parent="313" name="equipment">
+    <column id="453" parent="313" name="equipment">
       <Position>8</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="453" parent="313" name="wk_bild">
+    <column id="454" parent="313" name="wk_bild">
       <Position>9</Position>
       <StoredType>text|0s</StoredType>
     </column>
-    <column id="454" parent="313" name="description">
+    <column id="455" parent="313" name="description">
       <Position>10</Position>
       <StoredType>text|0s</StoredType>
     </column>
-    <foreign-key id="455" parent="313" name="creator_user_id">
+    <foreign-key id="456" parent="313" name="creator_user_id">
       <ColNames>creator_user_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>Users</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <foreign-key id="456" parent="313" name="wk_ziel_fk">
+    <foreign-key id="457" parent="313" name="wk_ziel_fk">
       <ColNames>trainingsziel</ColNames>
       <RefColNames>ziel_id</RefColNames>
       <RefTableName>trainingsziel</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <foreign-key id="457" parent="313" name="wk_muscle_fk">
+    <foreign-key id="458" parent="313" name="wk_muscle_fk">
       <ColNames>body_part</ColNames>
       <RefColNames>muscle_id</RefColNames>
       <RefTableName>Muscle</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <foreign-key id="458" parent="313" name="wk_level_fk">
+    <foreign-key id="459" parent="313" name="wk_level_fk">
       <ColNames>Level</ColNames>
       <RefColNames>level_id</RefColNames>
       <RefTableName>Levels</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <foreign-key id="459" parent="313" name="wk_equipment_fk">
+    <foreign-key id="460" parent="313" name="wk_equipment_fk">
       <ColNames>equipment</ColNames>
       <RefColNames>equipment_id</RefColNames>
       <RefTableName>equipment</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <index id="460" parent="313" name="PRIMARY">
+    <index id="461" parent="313" name="PRIMARY">
       <ColNames>workout_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="461" parent="313" name="creator_user_id">
+    <index id="462" parent="313" name="creator_user_id">
       <ColNames>creator_user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="462" parent="313" name="wk_ziel_fk">
+    <index id="463" parent="313" name="wk_ziel_fk">
       <ColNames>trainingsziel</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="463" parent="313" name="wk_muscle_fk">
+    <index id="464" parent="313" name="wk_muscle_fk">
       <ColNames>body_part</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="464" parent="313" name="wk_level_fk">
+    <index id="465" parent="313" name="wk_level_fk">
       <ColNames>Level</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="465" parent="313" name="wk_equipment_fk">
+    <index id="466" parent="313" name="wk_equipment_fk">
       <ColNames>equipment</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="466" parent="313" name="PRIMARY">
+    <key id="467" parent="313" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="467" parent="314" name="equipment_id">
-      <AutoIncrement>8</AutoIncrement>
+    <column id="468" parent="314" name="equipment_id">
+      <AutoIncrement>23</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="468" parent="314" name="equipment_name">
+    <column id="469" parent="314" name="equipment_name">
       <Position>2</Position>
       <StoredType>text|0s</StoredType>
     </column>
-    <index id="469" parent="314" name="PRIMARY">
+    <index id="470" parent="314" name="PRIMARY">
       <ColNames>equipment_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="470" parent="314" name="PRIMARY">
+    <key id="471" parent="314" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="471" parent="315" name="detail_id">
+    <column id="472" parent="315" name="detail_id">
       <AutoIncrement>26</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="472" parent="315" name="ex_id">
+    <column id="473" parent="315" name="ex_id">
       <NotNull>1</NotNull>
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="473" parent="315" name="instructions">
+    <column id="474" parent="315" name="instructions">
       <Position>3</Position>
       <StoredType>longtext|0s</StoredType>
     </column>
-    <column id="474" parent="315" name="Tips">
+    <column id="475" parent="315" name="Tips">
       <Position>4</Position>
       <StoredType>text|0s</StoredType>
     </column>
-    <foreign-key id="475" parent="315" name="fk_details_ex">
+    <foreign-key id="476" parent="315" name="fk_details_ex">
       <ColNames>ex_id</ColNames>
       <RefColNames>ex_id</RefColNames>
       <RefTableName>Exercises</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <index id="476" parent="315" name="PRIMARY">
+    <index id="477" parent="315" name="PRIMARY">
       <ColNames>detail_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="477" parent="315" name="fk_details_ex">
+    <index id="478" parent="315" name="fk_details_ex">
       <ColNames>ex_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="478" parent="315" name="PRIMARY">
+    <key id="479" parent="315" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="479" parent="316" name="force_id">
-      <AutoIncrement>9</AutoIncrement>
+    <column id="480" parent="316" name="force_id">
+      <AutoIncrement>16</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="480" parent="316" name="force_name">
+    <column id="481" parent="316" name="force_name">
       <Position>2</Position>
       <StoredType>text|0s</StoredType>
     </column>
-    <index id="481" parent="316" name="PRIMARY">
+    <index id="482" parent="316" name="PRIMARY">
       <ColNames>force_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="482" parent="316" name="PRIMARY">
+    <key id="483" parent="316" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="483" parent="317" name="workout_id_fk">
+    <column id="484" parent="317" name="workout_id_fk">
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="484" parent="317" name="exercise_id_fk">
+    <column id="485" parent="317" name="exercise_id_fk">
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <foreign-key id="485" parent="317" name="link_workout_exercise_Workouts_workout_id_fk">
+    <foreign-key id="486" parent="317" name="link_workout_exercise_Workouts_workout_id_fk">
       <ColNames>workout_id_fk</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>workout_id</RefColNames>
       <RefTableName>Workouts</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <foreign-key id="486" parent="317" name="link_workout_exercise_Exercises_ex_id_fk">
+    <foreign-key id="487" parent="317" name="link_workout_exercise_Exercises_ex_id_fk">
       <ColNames>exercise_id_fk</ColNames>
       <OnDelete>cascade</OnDelete>
       <RefColNames>ex_id</RefColNames>
       <RefTableName>Exercises</RefTableName>
       <RefTableParentName>gym_tracker</RefTableParentName>
     </foreign-key>
-    <index id="487" parent="317" name="link_workout_exercise_Workouts_workout_id_fk">
+    <index id="488" parent="317" name="link_workout_exercise_Workouts_workout_id_fk">
       <ColNames>workout_id_fk</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="488" parent="317" name="link_workout_exercise_Exercises_ex_id_fk">
+    <index id="489" parent="317" name="link_workout_exercise_Exercises_ex_id_fk">
       <ColNames>exercise_id_fk</ColNames>
       <Type>btree</Type>
     </index>
-    <column id="489" parent="318" name="ziel_id">
-      <AutoIncrement>9</AutoIncrement>
+    <column id="490" parent="318" name="ziel_id">
+      <AutoIncrement>10</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="490" parent="318" name="ziel_name">
+    <column id="491" parent="318" name="ziel_name">
       <Position>2</Position>
       <StoredType>text|0s</StoredType>
     </column>
-    <index id="491" parent="318" name="PRIMARY">
+    <index id="492" parent="318" name="PRIMARY">
       <ColNames>ziel_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="492" parent="318" name="PRIMARY">
+    <key id="493" parent="318" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="493" parent="319" name="id">
+    <column id="494" parent="319" name="user_id">
+      <Position>1</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="495" parent="319" name="plan_id">
+      <Position>2</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="496" parent="319" name="workout_id">
+      <Position>3</Position>
+      <StoredType>int|0s</StoredType>
+    </column>
+    <column id="497" parent="319" name="day">
+      <Position>4</Position>
+      <StoredType>tinytext|0s</StoredType>
+    </column>
+    <foreign-key id="498" parent="319" name="schedule_user_id">
+      <ColNames>user_id</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>id</RefColNames>
+      <RefTableName>Users</RefTableName>
+      <RefTableParentName>gym_tracker</RefTableParentName>
+    </foreign-key>
+    <foreign-key id="499" parent="319" name="schedule_plan_id">
+      <ColNames>plan_id</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>plan_id</RefColNames>
+      <RefTableName>WorkoutPlan</RefTableName>
+      <RefTableParentName>gym_tracker</RefTableParentName>
+    </foreign-key>
+    <foreign-key id="500" parent="319" name="schedule_workout_id">
+      <ColNames>workout_id</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <RefColNames>workout_id</RefColNames>
+      <RefTableName>Workouts</RefTableName>
+      <RefTableParentName>gym_tracker</RefTableParentName>
+    </foreign-key>
+    <index id="501" parent="319" name="schedule_user_id">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="502" parent="319" name="schedule_plan_id">
+      <ColNames>plan_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="503" parent="319" name="schedule_workout_id">
+      <ColNames>workout_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <column id="504" parent="320" name="id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <index id="494" parent="319" name="PRIMARY">
+    <index id="505" parent="320" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="495" parent="319" name="PRIMARY">
+    <key id="506" parent="320" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="496" parent="320" name="id_b">
+    <column id="507" parent="321" name="id_b">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <column id="497" parent="320" name="id_a">
+    <column id="508" parent="321" name="id_a">
       <Position>2</Position>
       <StoredType>int|0s</StoredType>
     </column>
-    <foreign-key id="498" parent="320" name="b_a_id_fk">
+    <foreign-key id="509" parent="321" name="b_a_id_fk">
       <ColNames>id_a</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
       <RefColNames>id</RefColNames>
       <RefTableName>a</RefTableName>
     </foreign-key>
-    <index id="499" parent="320" name="PRIMARY">
+    <index id="510" parent="321" name="PRIMARY">
       <ColNames>id_b</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="500" parent="320" name="b_a_id_fk">
+    <index id="511" parent="321" name="b_a_id_fk">
       <ColNames>id_a</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="501" parent="320" name="PRIMARY">
+    <key id="512" parent="321" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
