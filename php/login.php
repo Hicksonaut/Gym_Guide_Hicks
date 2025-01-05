@@ -19,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['email'], $_POST['passw
     if (!$stmt) {
         die("Fehler bei der Vorbereitung der SQL-Abfrage: " . $conn->error);
     }
-
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $stmt->store_result();

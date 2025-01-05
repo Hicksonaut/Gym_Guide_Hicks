@@ -67,6 +67,7 @@
 
 .card-header span{
     color: var(--text-secondary);
+    cursor: pointer;
 }
 
 .card-title {
@@ -80,6 +81,7 @@
     border-radius: 1rem;
     padding: 1.5rem;
     background: var(--card-bg);
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -149,4 +151,25 @@ input[type="radio"] {
 input[type="radio"]:checked + .button {
     background-color: var(--accent-color);
     color: white;
+}
+
+/* ab hier komm das css zu workout_fill_in_data.php*/
+
+.grid_rows {
+    display: grid;
+    grid-template-rows: auto;
+    grid-gap: 1.5rem;
+    gap: 1.5rem;
+}
+
+.grid-three {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 1.5rem;
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+}
+
+.grid-input {
+
 }

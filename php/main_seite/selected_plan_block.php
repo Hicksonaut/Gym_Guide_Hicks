@@ -32,10 +32,8 @@ $result = $stmt->get_result();
 
 
 
-echo "<div class='dashboard'>
 
-    <div class='dashboard-grid'>
-        <div class='card'>
+       echo "<div class='card'>
             <div class='card-header'>
                 <h2 class='card-title'>Selected Plan</h2>
                 <span onclick='load_pl_choose_filter_and_module()'>All Plans</span>
@@ -56,16 +54,4 @@ echo "<div class='dashboard'>
         }
 
 echo"       </div>
-        </div>
-        
-        <div class='card'>
-            <div class='card-header'>
-                <h2 class='card-title'>Todays Workout</h2>
-                <span>See All</span>
-            </div>
-            <div class='card-body'>
-                <p>test</p>
-            </div>
-        </div>
-    </div>
-</div>";
+        </div>";

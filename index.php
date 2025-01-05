@@ -210,13 +210,16 @@ $stmt->close();
     }
 
     function load_pl_choose_filter_and_module() {
-        loadContent('php/main_seite/choose_plan/pl_choose_filter_and_module.php')
+        loadContent('php/main_seite/choose_plan/pl_choose_filter_and_module.php');
     }
 
     function load_pl_choose_days() {
-        loadContent('php/main_seite/choose_plan/pl_choose_days.php')
+        loadContent('php/main_seite/choose_plan/pl_choose_days.php');
     }
 
+    function load_workout_fill_in_data(workout_id) {
+        loadContent(`php/main_seite/todays_workout/workout_fill_in_data.php?workout_id=${workout_id}`);
+    }
 
     function loadContent(url) {
         fetch(url)
@@ -317,6 +320,20 @@ $stmt->close();
             } else if (e.target && e.target.id === 'choose_days_workout') {
                 let formData = new FormData(e.target);
                 fetch(`php/main_seite/choose_plan/pl_choose_days.php`, {
+                    method: 'POST',
+                    body: formData,
+                })
+                    .then(response => response.text())
+                    .then(data => {
+                        console.log(data);
+                        loadHome();
+                    })
+                    .catch(error => {
+                        console.error('Fehler beim Aktualisieren des Plans:', error);
+                    });
+            } else if (e.target && e.target.id === 'eintragen_workout') {
+                let formData = new FormData(e.target);
+                fetch(`php/main_seite/todays_workout/workout_fill_in_data.php`, {
                     method: 'POST',
                     body: formData,
                 })

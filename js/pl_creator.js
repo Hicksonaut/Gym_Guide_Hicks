@@ -76,7 +76,6 @@ function addToListPl(workoutId) {
         }
     };
     updatePlanDetails();
-    // Anfrage mit Daten (workout_id und exercise_id) senden
     xhr.send("plan_id=" + planID + "&workout_id=" + workoutId);
 }
 
@@ -87,11 +86,8 @@ function updatePlanDetails() {
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
             var response = xhr.responseText;
-            //alert(response); // Show success or error message
         }
     };
-
-    // Send the request with the workout_id
     xhr.send();
 }
 

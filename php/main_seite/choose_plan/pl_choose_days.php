@@ -6,9 +6,34 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-// Prüfen, ob Benutzer und Plan existieren
-if (!isset($_SESSION['user_id']) || !isset($_SESSION['plan_id'])) {
-    die("Kein Benutzer oder Plan ausgewählt.");
+$sql = "
+    SELECT
+        UWP.plan_id,
+        WP.name,
+        WP.Bild
+    FROM
+        userworkoutplan AS UWP
+    LEFT JOIN 
+        workoutplan WP ON UWP.plan_id = WP.plan_id
+    WHERE 
+        user_id = ?
+";
+
+if (!isset($_SESSION['user_id'])) {
+    die("Kein Benutzer ausgewählt.");
+}
+
+if (!isset($_SESSION['plan_id'])) {
+    $user_id = $_SESSION['user_id'];
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($result && $row = $result->fetch_assoc()) {
+        $_SESSION['plan_id'] = $row['plan_id'];
+    } else {
+        die("Kein Plan in der Datenbank gefunden.");
+    }
 }
 
 $user_id = $_SESSION['user_id'];
@@ -26,7 +51,7 @@ $stmt_existing->bind_param("ii", $user_id, $planID);
 $stmt_existing->execute();
 $result_existing = $stmt_existing->get_result();
 
-// Array mit bestehenden Zuordnungen erstellen
+
 $existing_workouts = [];
 while ($row = $result_existing->fetch_assoc()) {
     $existing_workouts[$row['day']] = $row['workout_id'];

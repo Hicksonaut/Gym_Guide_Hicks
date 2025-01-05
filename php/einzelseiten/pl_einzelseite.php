@@ -83,10 +83,10 @@ if ($result->num_rows > 0) {
 
     $likedClass = $row['liked'] ? 'active' : '';
     $heartIcon = $row['liked'] ? '../../svg/heart_filled.svg' : '../../svg/heart-svgrepo-com.svg';
-    echo "<div class='like-icon-einzelseite $likedClass' onclick='toggleLikePl(this, " . htmlspecialchars($row['plan_id']) . ",\"exercise\")'>";
+    echo "<div class='like-icon-einzelseite $likedClass' onclick='toggleLike(this, " . htmlspecialchars($row['plan_id']) . ",\"exercise\")'>";
     echo "<img src='" . $heartIcon . "' alt='Like Icon' class='heart-icon-einzelseite'>";
     echo "</div>"; #ende like-icon
-
+ 
     echo "</div>"; #ende name & herz
     if ($row['creator_user_id'] == $_SESSION['user_id']) {
         echo "<img id='edit_icon' onclick='load_pl_bearbeiten_user($plan_id)' class='svg' src='../../svg/edit-svgrepo-com-3.svg'>";
