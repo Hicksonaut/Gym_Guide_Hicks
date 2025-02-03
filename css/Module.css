@@ -94,7 +94,13 @@ p {
 
 @media (max-width: 1029px) {
     .module-card {
-        width: 45%; /* Für kleinere Bildschirme 2 Karten nebeneinander */
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .module-card {
+        width: 100%;
     }
 
     .module-attribut-border-four {
@@ -108,26 +114,106 @@ p {
     .like-icon {
         opacity: 1;
     }
+    #mainContent .desktop-only {
+        display: none !important;
+    }
+
+    #mainContent .mobile-only {
+        display: block !important;
+    }
+
+    .filter-container {
+        flex-direction: column;
+        margin: 0 8px;
+        padding: 8px;
+    }
+
+    .filter-container form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    #mobileFilterToggle {
+        background: #D18239;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        margin-bottom: 8px;
+        width: 45%;
+        order: 1;
+        height: 100%;
+    }
+
+    .mobile-search-container {
+        order: 2;
+        margin-left: auto;
+        width: 53%;
+    }
+
+    .mobile-search-container input {
+        width: 100%;
+        height: 100%;
+    }
+
+    .mobile-search-container button {
+        width: 100%;
+        height: 100%;
+    }
+
+    #exercise_search_mobile {
+        width: 100%;
+        padding: 6px;
+    }
+
+    #filterContent {
+        display: none;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    #filterContent.show {
+        display: flex;
+    }
+
+    #filterContent select,
+    #resetButton {
+        width: 100%;
+        margin: 4px 0;
+    }
+
+    .mobile-button-group {
+        display: flex;
+        gap: 8px;
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    .mobile-button-group button {
+        flex: 1;
+        padding: 10px;
+        height: 36px;
+        width: 46.5%;
+    }
+
+    .mobile-filter-controls {
+        display: flex;
+        gap: 8px;
+        width: 100%;
+    }
 }
 
-@media (max-width: 709px) {
-    .module-card {
-        width: 100%; /* Auf sehr kleinen Bildschirmen 1 Karte pro Zeile */
-    }
-
-    .module-attribut-border-four {
-        width: 47%; /* Attribute untereinander auf kleineren Bildschirmen */
-    }
-
-    .plus-icon {
-        opacity: 1;
-    }
-
-    .like-icon {
-        opacity: 1;
-    }
+.mobile-only {
+    display: none;
 }
 
+.mobile-filter-controls {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 8px;
+}
 
 #resetButton {
     background: #D18239;
@@ -152,12 +238,12 @@ p {
 .filter-container select,
 .filter-container button {
     appearance: none;
-    background-color: #D18239; /* Match attribute background */
+    background-color: #D18239;
     color: white;
     border: none;
     border-radius: 4px;
     padding: 8px;
-    margin-right: 8px; /* Space between elements */
+    margin-right: 8px;
     font-family: "nunito", sans-serif;
 }
 
@@ -198,21 +284,21 @@ p {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.7); /* leicht transparentes Weiß */
+    background: rgba(255, 255, 255, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     font-size: 24px;
     transition: background 0.3s;
-    opacity: 0; /* versteckt das Icon zunächst */
-    pointer-events: none; /* deaktiviert Mausinteraktionen, solange es unsichtbar ist */
+    opacity: 0;
+    pointer-events: none;
 }
 
 .module-card:hover .plus-icon,
 .module-card:hover .like-icon {
-    opacity: 1; /* zeigt das Icon beim Hover an */
-    pointer-events: auto; /* aktiviert Mausinteraktionen */
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .like-icon img.heart-icon {
@@ -255,12 +341,12 @@ h2 {
 }
 
 #scrollToTopBtn {
-    display: none; /* Standardmäßig versteckt */
+    display: none;
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 999; /* Über allen anderen Elementen */
-    background-color: #D18239; /* Gleiche Farbe wie andere Buttons */
+    z-index: 999;
+    background-color: #D18239;
     color: white;
     border: none;
     border-radius: 50%;
@@ -272,5 +358,5 @@ h2 {
 }
 
 #scrollToTopBtn:hover {
-    background-color: #b36a2d; /* Leicht dunklerer Farbton beim Hover */
+    background-color: #b36a2d;
 }

@@ -90,7 +90,7 @@ function updateWorkoutDetails() {
         }
     };
 
-    // Send the request with the workout_id
+
     xhr.send();
 }
 
@@ -104,14 +104,14 @@ function WK_abbrechen() {
             console.log("Server Response:", response); // Debug-Ausgabe
             if (response == "deleted") {
                 //("Workout abgebrochen und gelöscht.");
-                // Optionale UI-Aktualisierung, z.B. Weiterleitung oder Entfernen der UI-Elemente
+
             } else {
                // alert("Fehler beim Abbrechen des Workouts: " + response);
             }
         }
     };
 
-    // Anfrage mit Daten (workout_id) senden
+
     xhr.send();
     loadworkout()
 }

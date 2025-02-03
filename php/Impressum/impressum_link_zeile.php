@@ -1,35 +1,35 @@
 <?php
 ?>
 
-<html lang="de">
 <head>
     <meta charset="UTF-8">
     <title>Impressum Link Zeile</title>
     <style>
-        body {
-            background: #0b0b0b;
+        .impressum-footer {
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
-            margin: 0;
             width: 100%;
+            color: white;
+            position: relative;
+            bottom: 0;
         }
 
-        .Buttons {
+        .impressum-footer .buttons {
             display: flex;
             justify-content: center;
         }
 
-        p {
+        .impressum-footer p {
             padding: 20px;
+            cursor: pointer;
         }
     </style>
 </head>
-<body>
-    <div class="Buttons">
+
+<div class="impressum-footer">
+    <div class="buttons">
         <p onclick="load_Impressum()">Impressum</p>
         <p onclick="load_Datenschutz()">Datenschutzrichtlinien</p>
     </div>
-</body>
-</html>
+</div>

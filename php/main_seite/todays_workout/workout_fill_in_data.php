@@ -71,9 +71,9 @@ if ($result->num_rows > 0) {
     $workout_name = $row['workout_name'];
 
     echo "<form action='' method='post' id='eintragen_workout'>";
-    echo "<h2>Tracking: $workout_name</h2>";
+    echo "<h2 style='color: var(--text-primary); margin-bottom: 2rem'>Tracking: $workout_name</h2>";
     echo "<div class='grid_rows'>";
-    echo "<div class='grid-three'>";
+    echo "<div class='grid-three header-row'>";
     echo "
         <h2>Übungen</h2>
         <h2>Gewicht</h2>
@@ -115,4 +115,6 @@ if ($result->num_rows > 0) {
 } else {
     echo "<h2>Kein Workout gefunden</h2>";
 }
+
+include "../../Impressum/impressum_link_zeile.php";
 ?>

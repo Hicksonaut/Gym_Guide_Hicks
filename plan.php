@@ -14,6 +14,15 @@ include 'php/pl_filter.php';
 <body>
 <div class="filter-container">
     <form id="filterform">
+
+        <div class="mobile-filter-controls">
+            <button type="button" id="mobileFilterToggle" class="mobile-only">☰ Filter</button>
+            <div class="mobile-search-container mobile-only">
+                <button type="button" id="Pl_erstellen_mobile"  onclick="load_user_erstellt_plan()">Add New</button>
+            </div>
+        </div>
+
+        <div id="filterContent">
         <label for="Trainingsziel">Trainingsziel</label>
         <select id="trainingsziel" onchange="applyFilters('plan')">
             <option value="">All</option>
@@ -87,7 +96,8 @@ include 'php/pl_filter.php';
         </select>
 
         <button type="button" id="resetButton" onclick="resetFilters('plan')">Reset</button>
-        <button type="button" id="PL_erstellen" onclick="load_user_erstellt_plan()">Add New</button>
+        </div>
+        <button type="button" id="PL_erstellen" class="desktop-only" onclick="load_user_erstellt_plan()">Add New</button>
     </form>
 </div>
 
@@ -99,6 +109,23 @@ include 'php/pl_moduls.php';
 include 'php/Impressum/impressum_link_zeile.php';
 ?>
 
+<script>
+    // Mobile Filter Toggle
+    document.getElementById('mobileFilterToggle').addEventListener('click', function() {
+        const filterContent = document.getElementById('filterContent');
+        filterContent.classList.toggle('show');
+    });
+
+    // Schließen bei Klick außerhalb
+    document.addEventListener('click', function(e) {
+        const filterContent = document.getElementById('filterContent');
+        const toggleBtn = document.getElementById('mobileFilterToggle');
+
+        if (!toggleBtn.contains(e.target) && !filterContent.contains(e.target)) {
+            filterContent.classList.remove('show');
+        }
+    });
+</script>
 <button id="scrollToTopBtn" title="Nach oben scrollen">⬆️</button>
 </body>
 </html>

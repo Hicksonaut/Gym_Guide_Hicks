@@ -170,8 +170,8 @@ if ($result->num_rows > 0) {
 
     // Übungen anzeigen
     if ($result_exercises->num_rows > 0) {
-        echo "<h2>Übungen:</h2>";
-        echo "<table class='element-table'>";
+        echo "<h2 class='desktop-only'>Übungen:</h2>";
+        echo "<table class='element-table '>";
         echo "<tr class='ueberschrift_tabelle'> 
                 <td>Übung</td>
                 <td>Zielmuskel</td>

@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user_id = $_SESSION['user_id'];
     $plan_id = $_SESSION['plan_id'];
 
-    echo "Plan ID: " . $plan_id . ", User ID: " . $user_id; // Zum Testen der übergebenen IDs
+    echo "Plan ID: " . $plan_id . ", User ID: " . $user_id;
 
     // SQL-Anweisung zum Löschen
     $sql = "DELETE FROM workoutplan WHERE plan_id = ?";

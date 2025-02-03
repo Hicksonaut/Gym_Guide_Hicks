@@ -78,18 +78,18 @@ body {
 
 .icon {
     width: 40px;
-    height: 40px; /* Größe anpassen */
+    height: 40px;
     padding: 5px;
-    background-color: rgb(35, 35, 35); /* Weiches Grün für den Hintergrund */
-    border-radius: 15px; /* Abgerundete Ecken */
-    box-shadow: 0px 4px 10px rgba(35, 35, 35); /* Glüheffekt */
-    transition: all 0.3s ease; /* Weicher Übergang bei Hover */
+    background-color: rgb(35, 35, 35);
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(35, 35, 35);
+    transition: all 0.3s ease;
 }
 
 .icon:hover {
-    background-color: #D18239; /* Weiches Grün für den Hintergrund */
-    box-shadow: 0px 4px 15px rgba(209, 130, 57, 0.9); /* 0.6Verstärkt den Glüheffekt bei Hover */
-    transform: scale(1.05); /* Vergrößerung beim Hover */
+    background-color: #D18239;
+    box-shadow: 0px 4px 15px rgba(209, 130, 57, 0.9);
+    transform: scale(1.05);
 }
 
 #Log_Out_Icon {
@@ -152,7 +152,7 @@ body {
     border-radius: 8px;
     cursor: pointer;
     justify-content: right;
-    /*background-color: rgb(200, 6, 6);*/
+
 }
 
 .avatar {
@@ -188,7 +188,7 @@ body {
     background-color: #fff;
     margin: 6px 0;
     transition: 0.4s;
-    border-radius: 15px; /* Abgerundete Ecken */
+    border-radius: 15px;
 }
 
 .change .bar1 {
@@ -253,85 +253,4 @@ a {
     background-color: #0b0b0b;
     border-radius: 15px;
 }
-
-
-/*ab hier wahrscheinluch alt code der bald raus muss*/
-.Gewicht_Anzeige {
-    background-color: #333333;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 15px;
-    display: flex;
-    width: 250px;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
-}
-
-.Gewicht_Anzeige:hover {
-    background-color: rgba(218, 255, 137, 0.87);
-    box-shadow: 0px 4px 15px rgba(183, 250, 135, 0.9);
-    transform: scale(1.05);
-}
-
-.Gewicht_Anzeige * {
-    margin-left: 10px;
-}
-
-.Text_in_Flex_Box {
-    font-family: "Nunito", sans-serif;
-    font-size: 15px;
-    color: #ffff;
-}
-
-#Waage_Icon {
-    width: 40px;
-    height: 40px;
-    padding: 10px;
-    background-color: black;
-    border-radius: 15px;
-}
-
-.Graph_Icon {
-    margin-top: 5px;
-    width: 30%;
-    height: 60%;
-    padding: 10px;
-}
-
-
-
-.Kalorien_Anzeige {
-    background-color: #333333;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 15px;
-    display: flex;
-    width: 250px;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
-}
-
-.Kalorien_Anzeige:hover{
-    background-color: rgba(218, 255, 137, 0.87);
-    box-shadow: 0px 4px 15px rgba(183, 250, 135, 0.9);
-    transform: scale(1.05);
-}
-
-.Kalorien_Anzeige * {
-    margin-left: 10px;
-}
-
-#Kalorien_Icon {
-    width: 50px;
-    height: 50px;
-    padding: 5px;
-    background-color: black;
-    border-radius: 15px;
-}
-
-
-
-
 

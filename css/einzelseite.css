@@ -71,7 +71,7 @@ body {
     display: none;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 709px) {
     .element-table-mobile {
         color: white;
         position: relative;
@@ -96,6 +96,8 @@ body {
     .element-table {
         display: none;
     }
+
+
 }
 
 .ueberschrift_tabelle{

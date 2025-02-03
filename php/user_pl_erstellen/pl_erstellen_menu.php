@@ -31,6 +31,16 @@ if ($row = $result->fetch_assoc()) {
 <h2 style="color: white">Add your Workouts to the Plan: <?php echo htmlspecialchars($name)?></h2>
 <div class="filter-container">
     <form id="filterForm">
+
+        <div class="mobile-filter-controls">
+            <button type="button" id="mobileFilterToggle" class="mobile-only">☰ Filter</button>
+            <div class="mobile-search-container mobile-only">
+                <input type="search" id="plan_erstellen_search" class="module_search"
+                       placeholder="Search..." oninput="applyFilters('plan_erstellen')">
+            </div>
+        </div>
+
+        <div id="filterContent">
         <label for="Trainingsziel">Trainingsziel</label>
         <select id="trainingsziel" onchange="applyFilters('plan_erstellen')">
             <option value="">All</option>
@@ -94,15 +104,36 @@ if ($row = $result->fetch_assoc()) {
         </select>
 
         <button type="button" id="resetButton" onclick="resetFilters('plan_erstellen')">Reset Filters</button>
-        <input type="search" id="plan_erstellen_search" class="module_search" placeholder="Search Exercises:..." oninput="applyFilters('plan_erstellen')">
-        <button type="button" id="wk_erstellen_abbrechen" onclick="Pl_abbrechen()">Löschen</button>
-        <button type="button" id="Workout_Fertigstellen" onclick="load_einzelseite_pl(<?php echo htmlspecialchars($plan_id); ?>)">Workout Fertigstellen</button>
+        </div>
+
+
+        <!-- Desktop Elements -->
+        <div class="desktop-only">
+            <input type="search" id="plan_erstellen_search_desktop" class="module_search" placeholder="Search Exercises..." oninput="applyFilters('plan_erstellen')">
+        </div>
+
+        <!-- Mobile Button Group -->
+        <div class="mobile-button-group mobile-only">
+            <button type="button" id="wk_erstellen_abbrechen" onclick="Pl_abbrechen()">Löschen</button>
+            <button type="button" id="Workout_Fertigstellen"
+                    onclick="load_einzelseite_pl(<?php echo htmlspecialchars($plan_id); ?>)">Fertigstellen</button>
+        </div>
+
+        <!-- Desktop Buttons -->
+        <div class="desktop-only">
+            <button type="button" id="wk_erstellen_abbrechen" onclick="Pl_abbrechen()">Löschen</button>
+            <button type="button" id="Workout_Fertigstellen"
+                    onclick="load_einzelseite_pl(<?php echo htmlspecialchars($plan_id); ?>)">Workout Fertigstellen</button>
+        </div>
     </form>
 </div>
 <div class="verfuegbare_wk_moduls">
 
     <?php
     include 'wk_moduls_pl_erstellen.php';
+
+    include "../Impressum/impressum_link_zeile.php";
+
     ?>
 
     <button id="scrollToTopBtn" title="Nach oben scrollen">⬆️</button>

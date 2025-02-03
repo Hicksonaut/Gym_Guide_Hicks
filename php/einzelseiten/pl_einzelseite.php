@@ -16,6 +16,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
 if (isset($_GET['plan_id'])) {
     $plan_id = intval($_GET['plan_id']);
+    $_SESSION["plan_id"] = $plan_id;
 } else {
     echo "Kein Plan ausgewählt";
 }
@@ -177,7 +178,7 @@ if ($result->num_rows > 0) {
 
     // Übungen anzeigen
     if ($result_workouts->num_rows > 0) {
-        echo "<h2>Workouts:</h2>";
+        echo "<h2 class='desktop-only'>Workouts:</h2>";
         echo "<table class='element-table'>";
         echo "<tr class='ueberschrift_tabelle'> 
                 <td>Workout</td>

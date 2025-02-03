@@ -14,6 +14,15 @@ include 'php/ex_filter.php';
 <body>
 <div class="filter-container">
     <form id="filterForm">
+        <div class="mobile-filter-controls">
+        <!-- Mobile -->
+        <button type="button" id="mobileFilterToggle" class="mobile-only">☰ Filter</button>
+        <div class="mobile-search-container mobile-only">
+            <input type="search" class="module_search" id="exercise_search" placeholder="Search..." oninput="applyFilters('exercise')">
+        </div>
+        </div>
+
+        <div id="filterContent">
         <label for="targetMuscle">Target Muscle:</label>
         <select id="targetMuscle" onchange="applyFilters('exercise')">
             <option value="">All</option>
@@ -66,7 +75,9 @@ include 'php/ex_filter.php';
         </select>
 
         <button type="button" id="resetButton" onclick="resetFilters('exercise')">Reset Filters</button>
-        <input type="search" class="module_search" id="exercise_search" placeholder="Search Exercises:..." oninput="applyFilters('exercise')">
+        </div>
+
+        <input type="search" class="module_search desktop-only" id="exercise_search" placeholder="Search Exercises:..." oninput="applyFilters('exercise')">
     </form>
 </div>
 
@@ -78,7 +89,23 @@ include 'php/ex_moduls.php';
 <?php
 include 'php/Impressum/impressum_link_zeile.php';
 ?>
+<script>
+    // Mobile Filter Toggle
+    document.getElementById('mobileFilterToggle').addEventListener('click', function() {
+        const filterContent = document.getElementById('filterContent');
+        filterContent.classList.toggle('show');
+    });
 
+    // Schließen bei Klick außerhalb
+    document.addEventListener('click', function(e) {
+        const filterContent = document.getElementById('filterContent');
+        const toggleBtn = document.getElementById('mobileFilterToggle');
+
+        if (!toggleBtn.contains(e.target) && !filterContent.contains(e.target)) {
+            filterContent.classList.remove('show');
+        }
+    });
+</script>
 <button id="scrollToTopBtn" title="Nach oben scrollen">⬆️</button>
 </body>
 </html>

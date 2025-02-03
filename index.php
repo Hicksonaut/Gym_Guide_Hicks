@@ -228,9 +228,19 @@ $stmt->close();
                 document.getElementById('mainContent').innerHTML = text;
 
                 attachScrollToTopListener();
+                initMobileFilters();
         }).catch(error => {
             console.error('Error loading content: ' + error); // Fehlerstatus anzeigen
         })
+    }
+
+    function initMobileFilters() {
+        const toggleBtn = document.getElementById('mobileFilterToggle');
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', function() {
+                document.getElementById('filterContent').classList.toggle('show');
+            });
+        }
     }
 
     function attachScrollToTopListener() {
@@ -254,7 +264,7 @@ $stmt->close();
     }
 
     document.addEventListener('DOMContentLoaded', function () {
-        loadHome(); // damit automatische die Home Seite angezit wird sowie man auf die Webseite kommt.
+        loadHome();
         document.getElementById('mainContent').addEventListener('submit', function (e) {
             e.preventDefault();
             if (e.target && e.target.id === 'createWorkoutForm') {
@@ -265,12 +275,11 @@ $stmt->close();
                 })
                     .then(response => response.text())
                     .then(data => {
-                        console.log(data); // Hier kann eine Erfolgsmeldung angezeigt werden
-                        load_wk_erstellen_menu(); // Seite neu laden oder andere Aktion
+                        console.log(data);
+                        load_wk_erstellen_menu();
                     })
                     .catch(error => {
                         console.error('Fehler beim Erstellen des Workouts:', error);
-                        //alert("Fehler beim Erstellen des Workouts.");
                     });
             } else if (e.target && e.target.id === 'createPlanForm') {
                 let formData = new FormData(e.target);
@@ -280,12 +289,11 @@ $stmt->close();
                 })
                     .then(response => response.text())
                     .then(data => {
-                        console.log(data); // Hier kann eine Erfolgsmeldung angezeigt werden
-                        load_pl_erstellen_menu(); // Seite neu laden oder andere Aktion
+                        console.log(data);
+                        load_pl_erstellen_menu();
                     })
                     .catch(error => {
                         console.error('Fehler beim Erstellen des Plans:', error);
-                        //alert("Fehler beim Erstellen des Plans.");
                     });
             } else if (e.target && e.target.id === 'UpdateWorkoutForm') {
                 let formData = new FormData(e.target);

@@ -14,7 +14,7 @@ if (($_GET['plan_id'])){
 } elseif (!isset($_GET['plan_id'])) {
     if (!isset($_SESSION['plan_id'])) {
         die("Kein Plan ausgewählt2.");
-    } elseif (isset($_SESSION['plan_id'])) {
+    } else {
         $plan_id = $_SESSION['plan_id'];
     }
 }
@@ -124,3 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 </body>
 </html>
+
+<?php
+include "../Impressum/impressum_link_zeile.php";
+?>

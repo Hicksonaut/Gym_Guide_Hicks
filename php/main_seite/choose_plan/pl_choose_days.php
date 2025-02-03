@@ -96,6 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 // Workouts für das Formular abrufen
 $workouts = include "pl_sql_select_days.php";
 ?>
+<h2>Wähle deine Trainingstage aus:</h2>
 <form action="" method="post" id="choose_days_workout">
     <div class="grid_seven">
         <?php foreach ($days as $day): ?>
@@ -126,3 +127,7 @@ $workouts = include "pl_sql_select_days.php";
     </div>
     <input type="submit" value="Speichern">
 </form>
+
+<?php
+include "../../Impressum/impressum_link_zeile.php";
+?>

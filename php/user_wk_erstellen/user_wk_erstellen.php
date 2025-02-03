@@ -87,3 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 </body>
 </html>
+
+<?php
+include "../Impressum/impressum_link_zeile.php";
+?>

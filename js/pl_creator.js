@@ -101,14 +101,13 @@ function Pl_abbrechen() {
             console.log("Server Response:", response); // Debug-Ausgabe
             if (response == "deleted") {
                 //alert("Plan abgebrochen und gelöscht.");
-                // Optionale UI-Aktualisierung, z.B. Weiterleitung oder Entfernen der UI-Elemente
             } else {
                 // alert("Fehler beim Abbrechen des Workouts: " + response);
             }
         }
     };
 
-    // Anfrage mit Daten (workout_id) senden
+
     xhr.send();
     loadplan()
 }

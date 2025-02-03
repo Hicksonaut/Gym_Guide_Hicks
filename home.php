@@ -7,7 +7,13 @@ include "php/main_seite/selected_plan_block.php";
 
 include "php/main_seite/todays_workout/todays_workout.php";
 
+
+
 echo "</div>
+
 </div>";
+
+include "php/Impressum/impressum_link_zeile.php";
+
 ?>
 
